@@ -14,7 +14,8 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
+
+![Dd]ebug/*.dll
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
@@ -66,6 +67,11 @@ StyleCopReport.xml
 *.ilk
 *.meta
 *.obj
+!res/*.obj
+*.exe
+*.tlog
+*.idb
+![res]/*.obj
 *.iobj
 *.pch
 *.pdb
