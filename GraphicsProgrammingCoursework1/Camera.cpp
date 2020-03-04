@@ -32,3 +32,13 @@ Matrix Camera::GetProjection() const
 {
 	return projection;
 }
+
+void Camera::RotateY(float angle)
+{
+	const Vec3 UP(0.0f, 1.0f, 0.0f);
+
+	Matrix rotation = glm::rotate(angle, UP);
+
+	forward = Vec3(glm::normalize(rotation * glm::vec4(forward, 0.0)));
+	up = Vec3(glm::normalize(rotation * Vec4(up, 0.0)));
+}

@@ -22,6 +22,9 @@ class Camera : public MutablePoint
 		Matrix GetViewProjection() const;
 		Matrix GetView() const;
 		Matrix GetProjection() const;
+
+		void RotateY(float angle);
+
 	private:
 		Vec3 forward;
 		Matrix projection;
