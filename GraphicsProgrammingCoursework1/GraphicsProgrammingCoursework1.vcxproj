@@ -24,6 +24,7 @@
     <ClCompile Include="MutablePoint.cpp" />
     <ClCompile Include="program.cpp" />
     <ClCompile Include="SDLWindowManager.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -32,6 +33,7 @@
     <ClInclude Include="Logger.h" />
     <ClInclude Include="MutablePoint.h" />
     <ClInclude Include="SDLWindowManager.h" />
+    <ClInclude Include="Shader.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
