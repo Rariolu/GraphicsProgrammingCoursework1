@@ -21,10 +21,12 @@
   <ItemGroup>
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="program.cpp" />
+    <ClCompile Include="SDLWindowManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aliases.h" />
     <ClInclude Include="Logger.h" />
+    <ClInclude Include="SDLWindowManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
