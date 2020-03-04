@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/rcoyne200/source/repos/CourseProj1/Dependencies/glm/include
+# Install script for directory: C:/Users/Rariolu/source/repos/GraphicsProgrammingCoursework1/Dependencies/glm/include
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Users/rcoyne200/Source/Repos/CourseProj1/Dependencies/glm/include/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "c:/users/rariolu/source/repos/graphicsprogrammingcoursework1/dependencies/glm/include/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/rcoyne200/source/repos/CourseProj1/Dependencies/glm/include/out/build/x64-Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Rariolu/source/repos/GraphicsProgrammingCoursework1/Dependencies/glm/include/out/build/x64-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

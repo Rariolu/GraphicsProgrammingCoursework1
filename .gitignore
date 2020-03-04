@@ -60,6 +60,9 @@ artifacts/
 # StyleCop
 StyleCopReport.xml
 
+*.json
+*.cmake
+
 # Files built by Visual Studio
 *_i.c
 *_p.c
