@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameObjectShader.cpp" />
     <ClCompile Include="IndexedModel.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Mesh.cpp" />
@@ -39,6 +41,8 @@
     <ClInclude Include="Aliases.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Collider.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameObjectShader.h" />
     <ClInclude Include="IndexedModel.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="Mesh.h" />
