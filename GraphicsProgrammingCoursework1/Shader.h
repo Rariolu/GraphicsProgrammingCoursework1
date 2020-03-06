@@ -22,9 +22,20 @@ class Shader
 		//"AbstractShader".
 		void Bind();
 
+		//Set the value of the float uniform
+		//at the given address.
 		void SetFloat(GLuint address, float value);
+
+		//Set the value of the vec2 uniform
+		//at the given address.
 		void SetVec2(GLuint address, Vec2 value);
+
+		//Set the value of the vec3 uniform
+		//at the given address.
 		void SetVec3(GLuint address, Vec3 value);
+
+		//Set the value of the mat4 uniform
+		//at the given address.
 		void SetMatrix(GLuint address, Matrix value);
 
 		void SetFloat(string name, float value);
