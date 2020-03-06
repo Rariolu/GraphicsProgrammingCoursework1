@@ -31,6 +31,7 @@
     <ClCompile Include="MutablePoint.cpp" />
     <ClCompile Include="ObjLoader.cpp" />
     <ClCompile Include="program.cpp" />
+    <ClCompile Include="QuadMShader.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="SDLWindowManager.cpp" />
     <ClCompile Include="Shader.cpp" />
@@ -51,6 +52,7 @@
     <ClInclude Include="ModelTexture.h" />
     <ClInclude Include="MutablePoint.h" />
     <ClInclude Include="ObjLoader.h" />
+    <ClInclude Include="QuadMShader.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SDLWindowManager.h" />
     <ClInclude Include="Shader.h" />
@@ -58,6 +60,9 @@
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Util.h" />
     <ClInclude Include="Vertex.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
