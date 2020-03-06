@@ -22,6 +22,7 @@
     <ClCompile Include="AudioDevice.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectShader.cpp" />
     <ClCompile Include="IndexedModel.cpp" />
@@ -45,6 +46,8 @@
     <ClInclude Include="AudioDevice.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Collider.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectShader.h" />
     <ClInclude Include="IndexedModel.h" />
