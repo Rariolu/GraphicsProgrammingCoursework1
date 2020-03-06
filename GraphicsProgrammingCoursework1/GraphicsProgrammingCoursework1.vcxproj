@@ -33,6 +33,7 @@
     <ClCompile Include="program.cpp" />
     <ClCompile Include="QuadMShader.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SDLWindowManager.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="stb_image.c" />
@@ -54,6 +55,7 @@
     <ClInclude Include="ObjLoader.h" />
     <ClInclude Include="QuadMShader.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="SDLWindowManager.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
