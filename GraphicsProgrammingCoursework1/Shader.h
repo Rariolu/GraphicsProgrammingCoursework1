@@ -16,7 +16,8 @@ class Shader
 	public:
 		Shader(string geomFile, string vertFile, string fragFile);
 		Shader(string vertFile, string fragFile);
-		Shader(vector<ShaderDef> shaderDefinitions);
+		//Shader(vector<ShaderDef> shaderDefinitions);
+		Shader(ShaderDef* shaderDefinitions, unsigned int length);
 
 		//Tell openGL to use the executable program associated with this
 		//"AbstractShader".

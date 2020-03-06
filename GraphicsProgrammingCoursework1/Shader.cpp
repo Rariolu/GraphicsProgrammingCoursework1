@@ -1,7 +1,7 @@
 #include "Shader.h"
 
 Shader::Shader(string geomFile, string vertFile, string fragFile)
-	: Shader({{geomFile,GL_GEOMETRY_SHADER},{vertFile,GL_VERTEX_SHADER},{fragFile,GL_FRAGMENT_SHADER}})
+	: Shader(new ShaderDef[3]{{geomFile,GL_GEOMETRY_SHADER},{vertFile,GL_VERTEX_SHADER},{fragFile,GL_FRAGMENT_SHADER}},3)
 {
 	//program = glCreateProgram();
 	//string geomShader = LoadText(geomFile);
@@ -21,7 +21,7 @@ Shader::Shader(string geomFile, string vertFile, string fragFile)
 }
 
 Shader::Shader(string vertFile, string fragFile) :
-Shader({{vertFile,GL_VERTEX_SHADER},{fragFile,GL_FRAGMENT_SHADER} })
+Shader(new ShaderDef[2]{{vertFile,GL_VERTEX_SHADER},{fragFile,GL_FRAGMENT_SHADER} },2)
 {
 	//program = glCreateProgram();
 
@@ -37,12 +37,29 @@ Shader({{vertFile,GL_VERTEX_SHADER},{fragFile,GL_FRAGMENT_SHADER} })
 	//glValidateProgram(program);
 }
 
-Shader::Shader(vector<ShaderDef> shaderDefinitions)
+//Shader::Shader(vector<ShaderDef> shaderDefinitions)
+//{
+//	program = glCreateProgram();
+//
+//	for (ShaderDef shaderDef : shaderDefinitions)
+//	{
+//		string shaderText = LoadText(shaderDef.file);
+//		shaders.push_back(CreateShader(shaderText, shaderDef.type));
+//	}
+//
+//	AttachShaders();
+//
+//	glLinkProgram(program);
+//	glValidateProgram(program);
+//}
+
+Shader::Shader(ShaderDef* shaderDefinitions, unsigned int length)
 {
 	program = glCreateProgram();
 
-	for (ShaderDef shaderDef : shaderDefinitions)
+	for(int i = 0; i < length; i++)
 	{
+		ShaderDef shaderDef = shaderDefinitions[i];
 		string shaderText = LoadText(shaderDef.file);
 		shaders.push_back(CreateShader(shaderText, shaderDef.type));
 	}
