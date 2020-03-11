@@ -1,8 +1,8 @@
-
+#include "Game.h"
 
 #undef main
 
 int main()
 {
-	return 0;
+	return Game::Instance()->CreateWindow(windowTitle, windowWidth, windowHeight);
 }
