@@ -1,13 +1,14 @@
 #ifndef _GAME_H
 #define _GAME_H
 
-#include "Scene.h"
+//#include "Scene.h"
 #include "SDLWindowManager.h"
 #include "ResourceManager.h"
 #include "Constants.h"
 #include "ObjLoader.h"
 #include "ModelTexture.h"
 #include "QuadMShader.h"
+#include "GraphicsCourseworkScene.h"
 
 //A class which manages the entire
 //program.

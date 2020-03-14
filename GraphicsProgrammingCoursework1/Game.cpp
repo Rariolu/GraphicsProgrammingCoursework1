@@ -42,7 +42,7 @@ void Game::Dispose()
 
 void Game::ResourceSetup()
 {
-
+	resourceManager->AddScene(sceneName, new GraphicsCourseworkScene());
 }
 
 void Game::SetupMesh(string name, string objfile)

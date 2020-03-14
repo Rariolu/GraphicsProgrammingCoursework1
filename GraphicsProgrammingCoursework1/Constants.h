@@ -5,7 +5,7 @@
 
 //Scenes
 
-const string sceneName = "";
+const string sceneName = "graphicsCourseworkScene";
 
 //Window meta
 
