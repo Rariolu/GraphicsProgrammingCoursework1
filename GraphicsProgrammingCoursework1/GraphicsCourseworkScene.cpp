@@ -2,6 +2,13 @@
 
 bool GraphicsCourseworkScene::KeyDown(SDL_Keycode keycode)
 {
+	switch (keycode)
+	{
+		case SDLK_ESCAPE:
+		{
+			return false;
+		}
+	}
 	return true;
 }
 
