@@ -52,6 +52,11 @@ void Game::ResourceSetup()
 	ModelTexture* texture = new ModelTexture(texture1File);
 	resourceManager->AddModelTexture(texture1, texture);
 
+	//Shaders
+
+	QuadMShader* shader = new QuadMShader(tempShaderVertFile, tempShaderFragFile);
+	resourceManager->AddShader(tempShader, shader);
+
 	//Scenes
 
 	resourceManager->AddScene(sceneName, new GraphicsCourseworkScene());

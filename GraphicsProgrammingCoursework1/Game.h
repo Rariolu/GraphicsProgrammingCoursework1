@@ -4,7 +4,6 @@
 //#include "Scene.h"
 #include "SDLWindowManager.h"
 #include "ResourceManager.h"
-#include "Constants.h"
 #include "ObjLoader.h"
 #include "ModelTexture.h"
 #include "QuadMShader.h"

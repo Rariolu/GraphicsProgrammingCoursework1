@@ -22,7 +22,7 @@ void Scene::Dispose()
 	initialised = false;
 	//Delete all the gameobjects from memory 
 	//to free up resources.
-	for (int i = 0; i < gameObjects.size(); i++)
+	for (unsigned int i = 0; i < gameObjects.size(); i++)
 	{
 		delete gameObjects[i];
 	}

@@ -13,6 +13,12 @@ const string marioFile = "..\\Resources\\Mario.obj";
 const string texture1 = "joker";
 const string texture1File = "..\\Resources\\Joker_1.png";
 
+//Shaders
+
+const string tempShader = "tempShader";
+const string tempShaderVertFile = "..\\Resources\\quadMShader.vert";
+const string tempShaderFragFile = "..\\Resources\\quadMShader.frag";
+
 //Scenes
 
 const string sceneName = "graphicsCourseworkScene";
