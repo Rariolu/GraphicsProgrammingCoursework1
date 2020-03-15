@@ -3,7 +3,7 @@
 ResourceManager* SkyBox::resourceManager = ResourceManager::Instance();
 
 SkyBox::SkyBox(string cubeMapPath, string shaderName) :
-	SkyBox(new CubeMap(cubeMapPath,".png"),(SkyBoxShader*)resourceManager->GetShader(shaderName))
+	SkyBox(new CubeMap(cubeMapPath,".jpg"),(SkyBoxShader*)resourceManager->GetShader(shaderName))
 {
 
 }

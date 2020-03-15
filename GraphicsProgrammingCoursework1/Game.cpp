@@ -57,6 +57,9 @@ void Game::ResourceSetup()
 	QuadMShader* shader = new QuadMShader(tempShaderVertFile, tempShaderFragFile);
 	resourceManager->AddShader(tempShader, shader);
 
+	SkyBoxShader* skyboxShader = new SkyBoxShader(skyboxShaderVertFile, skyboxShaderFragFile);
+	resourceManager->AddShader(skyboxShaderName, skyboxShader);
+
 	//Scenes
 
 	resourceManager->AddScene(sceneName, new GraphicsCourseworkScene());

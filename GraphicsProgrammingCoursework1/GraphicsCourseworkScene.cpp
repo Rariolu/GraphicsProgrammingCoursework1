@@ -5,7 +5,7 @@ void GraphicsCourseworkScene::Initialise()
 	Scene::Initialise();
 	GameObject* obj = AddGameObject(mario, texture1, tempShader);
 	obj->SetPosition(0, -100, 300.0f);
-	SkyBox* sky = new SkyBox(skyboxFiles, skyboxShaderName);
+	SkyBox* sky = new SkyBox(skyboxFiles2, skyboxShaderName);
 	SetSkyBox(sky);
 }
 
@@ -19,12 +19,12 @@ bool GraphicsCourseworkScene::KeyDown(SDL_Keycode keycode)
 		}
 		case SDLK_a:
 		{
-			camera->RotateY(rSpeed * DeltaTime());
+			camera->Rotate(AXIS::Y,rSpeed * DeltaTime());
 			break;
 		}
 		case SDLK_d:
 		{
-			camera->RotateY(-rSpeed * DeltaTime());
+			camera->Rotate(AXIS::Y,-rSpeed * DeltaTime());
 			break;
 		}
 	}

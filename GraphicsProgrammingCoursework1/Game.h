@@ -8,6 +8,7 @@
 #include "ModelTexture.h"
 #include "QuadMShader.h"
 #include "GraphicsCourseworkScene.h"
+#include "SkyBoxShader.h"
 
 //A class which manages the entire
 //program.
