@@ -42,3 +42,13 @@ void Camera::RotateY(float angle)
 	forward = Vec3(glm::normalize(rotation * glm::vec4(forward, 0.0)));
 	up = Vec3(glm::normalize(rotation * Vec4(up, 0.0)));
 }
+
+void Camera::Rotate(AXIS axis, float angle)
+{
+	Vec3 axisVector = Vec3(axis == AXIS::X, axis == AXIS::Y, axis == AXIS::Z);
+	
+	Matrix rotation = glm::rotate(angle, axisVector);
+	
+	forward = Vec3(glm::normalize(rotation * glm::vec4(forward, 0.0)));
+	up = Vec3(glm::normalize(rotation * Vec4(up, 0.0)));
+}
