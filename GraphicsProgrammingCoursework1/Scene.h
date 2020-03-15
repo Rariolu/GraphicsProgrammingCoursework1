@@ -6,6 +6,7 @@
 #include "GameObject.h"
 #include "SDLWindowManager.h"
 #include "AudioDevice.h"
+#include "Skybox.h"
 
 class Scene
 {
@@ -54,6 +55,8 @@ protected:
 
 	//Designate the next scene to be loaded.
 	void SetNextScene(string scenename);
+
+	void SetSkyBox(SkyBox* _skybox);
 
 	//A pointer to an instance of "AudioDevice" used to play
 	//sounds using the system's default audio device.
@@ -110,6 +113,8 @@ private:
 	//The sdl window manager of the current openGL
 	//context (used to clear the display and swap buffers).
 	SDLWindowManager* sdlWindowManager;
+
+	SkyBox* skybox;
 };
 
 #endif

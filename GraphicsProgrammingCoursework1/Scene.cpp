@@ -133,6 +133,12 @@ void Scene::SetNextScene(string scenename)
 	nextScene = scenename;
 }
 
+void Scene::SetSkyBox(SkyBox* _skybox)
+{
+	skybox = _skybox;
+	skybox->SetCamera(camera);
+}
+
 bool Scene::GetInput()
 {
 	//Iterate through all SDL events and process them.
@@ -182,6 +188,11 @@ void Scene::Render()
 	for (GameObject* go : gameObjects)
 	{
 		go->Render();
+	}
+
+	if (skybox)
+	{
+		skybox->Render();
 	}
 
 	glEnableClientState(GL_COLOR_ARRAY);

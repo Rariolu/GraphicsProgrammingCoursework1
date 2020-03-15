@@ -12,12 +12,17 @@ const string marioFile = "..\\Resources\\Mario.obj";
 
 const string texture1 = "joker";
 const string texture1File = "..\\Resources\\Joker_1.png";
+const string skyboxFiles = "..\\Resources\\skybox_temp\\skybox";
 
 //Shaders
 
 const string tempShader = "tempShader";
 const string tempShaderVertFile = "..\\Resources\\quadMShader.vert";
 const string tempShaderFragFile = "..\\Resources\\quadMShader.frag";
+
+const string skyboxShaderName = "skybox";
+const string skyboxShaderVertFile = "..\\Resources\\skyboxShader.vert";
+const string skyboxShaderFragFile = "..\\Resources\\skyboxShader.frag";
 
 //Scenes
 

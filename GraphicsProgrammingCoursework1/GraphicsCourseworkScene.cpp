@@ -5,6 +5,8 @@ void GraphicsCourseworkScene::Initialise()
 	Scene::Initialise();
 	GameObject* obj = AddGameObject(mario, texture1, tempShader);
 	obj->SetPosition(0, -100, 300.0f);
+	SkyBox* sky = new SkyBox(skyboxFiles, skyboxShaderName);
+	SetSkyBox(sky);
 }
 
 bool GraphicsCourseworkScene::KeyDown(SDL_Keycode keycode)
