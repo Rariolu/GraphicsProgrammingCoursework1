@@ -12,7 +12,7 @@ class GraphicsCourseworkScene : public Scene
 		bool KeyDown(SDL_Keycode keycode);
 		bool MouseDown(SDL_MouseButtonEvent mousebutton);
 		bool Update();
-		float rSpeed = 20.0f;
+		const float rSpeed = 20.0f;
 };
 
 #endif
