@@ -27,6 +27,8 @@ class Shader
 		//at the given address.
 		void SetFloat(GLuint address, float value);
 
+		void SetInt(GLuint address, int value);
+
 		//Set the value of the vec2 uniform
 		//at the given address.
 		void SetVec2(GLuint address, Vec2 value);
@@ -40,6 +42,7 @@ class Shader
 		void SetMatrix(GLuint address, Matrix value);
 
 		void SetFloat(string name, float value);
+		void SetInt(string name, int value);
 		void SetVec2(string name, Vec2 value);
 		void SetVec3(string name, Vec3 value);
 		void SetMatrix(string name, Matrix value);

@@ -57,7 +57,7 @@ Shader::Shader(ShaderDef* shaderDefinitions, unsigned int length)
 {
 	program = glCreateProgram();
 
-	for(int i = 0; i < length; i++)
+	for(unsigned int i = 0; i < length; i++)
 	{
 		ShaderDef shaderDef = shaderDefinitions[i];
 		string shaderText = LoadText(shaderDef.file);
@@ -80,6 +80,11 @@ void Shader::SetFloat(GLuint address, float value)
 	glUniform1f(address, value);
 }
 
+void Shader::SetInt(GLuint address, int value)
+{
+	glUniform1i(address, value);
+}
+
 void Shader::SetVec2(GLuint address, Vec2 value)
 {
 	glUniform2fv(address, 1, &value[0]);
@@ -98,6 +103,11 @@ void Shader::SetMatrix(GLuint address, Matrix value)
 void Shader::SetFloat(string name, float value)
 {
 	SetFloat(glGetUniformLocation(program, name.c_str()), value);
+}
+
+void Shader::SetInt(string name, int value)
+{
+	SetInt(glGetUniformLocation(program, name.c_str()), value);
 }
 
 void Shader::SetVec2(string name, Vec2 value)
@@ -122,7 +132,7 @@ GLuint Shader::GetProgram()
 
 void Shader::AttachShaders()
 {
-	for (int i = 0; i < shaders.size(); i++)
+	for (unsigned int i = 0; i < shaders.size(); i++)
 	{
 		glAttachShader(program, shaders[i]);
 	}

@@ -40,6 +40,7 @@
     <ClCompile Include="SDLWindowManager.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Skybox.cpp" />
+    <ClCompile Include="SkyBoxShader.cpp" />
     <ClCompile Include="stb_image.c" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Util.cpp" />
@@ -67,6 +68,7 @@
     <ClInclude Include="SDLWindowManager.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Skybox.h" />
+    <ClInclude Include="SkyBoxShader.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="Util.h" />
