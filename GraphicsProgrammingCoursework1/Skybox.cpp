@@ -1,5 +1,13 @@
 #include "Skybox.h"
 
+ResourceManager* SkyBox::resourceManager = ResourceManager::Instance();
+
+SkyBox::SkyBox(string cubeMapPath, string shaderName) :
+	SkyBox(new CubeMap(cubeMapPath,".png"),(SkyBoxShader*)resourceManager->GetShader(shaderName))
+{
+
+}
+
 SkyBox::SkyBox(CubeMap* cubeMap, SkyBoxShader* shader)
 {
 	camera = nullptr;

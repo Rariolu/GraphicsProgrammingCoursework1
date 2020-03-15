@@ -3,14 +3,17 @@
 
 #include "CubeMap.h"
 #include "SkyBoxShader.h"
+#include "ResourceManager.h"
 
 class SkyBox
 {
 	public:
+		SkyBox(string cubeMapName, string shaderName);
 		SkyBox(CubeMap* cubeMap, SkyBoxShader* shader);
 		void Render();
 		void SetCamera(Camera* _camera);
 	private:
+		static ResourceManager* resourceManager;
 		Camera* camera;
 		GLuint skyboxVAO;
 		GLuint skyboxVBO;
