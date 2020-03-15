@@ -42,6 +42,18 @@ void Game::Dispose()
 
 void Game::ResourceSetup()
 {
+	//Models
+
+	//SetupMesh("mon", "..\\Resources\\monkey3.obj");
+	SetupMesh(mario, marioFile);
+
+	//Textures
+
+	ModelTexture* texture = new ModelTexture(texture1File);
+	resourceManager->AddModelTexture(texture1, texture);
+
+	//Scenes
+
 	resourceManager->AddScene(sceneName, new GraphicsCourseworkScene());
 }
 

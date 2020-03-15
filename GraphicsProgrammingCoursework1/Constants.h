@@ -3,6 +3,16 @@
 
 #include "Aliases.h"
 
+//Models
+
+const string mario = "Mario";
+const string marioFile = "..\\Resources\\Mario.obj";
+
+//Textures
+
+const string texture1 = "joker";
+const string texture1File = "..\\Resources\\Joker_1.png";
+
 //Scenes
 
 const string sceneName = "graphicsCourseworkScene";

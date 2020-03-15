@@ -14,8 +14,7 @@
 *.userprefs
 
 # Build results
-
-![Dd]ebug/*.dll
+[Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
@@ -60,21 +59,15 @@ artifacts/
 # StyleCop
 StyleCopReport.xml
 
-*.json
-*.cmake
-
 # Files built by Visual Studio
 *_i.c
 *_p.c
 *_h.h
 *.ilk
 *.meta
-*.obj
-!res/*.obj
-*.exe
-*.tlog
-*.idb
-![res]/*.obj
+![Resources]/*.obj
+
+
 *.iobj
 *.pch
 *.pdb
@@ -347,3 +340,10 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/Dependencies/glm/include/out/build/x64-Debug/CMakeFiles/3.14.19050301-MSVC_2
+/Dependencies/glm/include/out/build/x64-Debug/.cmake/api/v1/reply/target-glm_dummy-Debug-3bd694a2eb63d24e0d9e.json
+/Dependencies/glm/include/out/build/x64-Debug/.cmake/api/v1/reply/index-2020-03-04T17-06-39-0097.json
+/Dependencies/glm/include/out/build/x64-Debug/.cmake/api/v1/reply/codemodel-v2-f33a7f6556a43c72a76b.json
+/Dependencies/glm/include/out/build/x64-Debug/.cmake/api/v1/reply/cmakeFiles-v1-5a68c510792b46a05356.json
+/Dependencies/glm/include/out/build/x64-Debug/.cmake/api/v1/reply/cache-v2-0df3107e595cc55bb0f5.json
+/Dependencies/glm/include/out/build/x64-Debug/CMakeFiles/ShowIncludes/main.obj
