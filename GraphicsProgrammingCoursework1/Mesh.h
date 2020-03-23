@@ -16,7 +16,7 @@ public:
 	~Mesh();
 
 	//Generate a mesh from a set of vertices, normals, and UV coordinates.
-	static Mesh* LoadModel(ObjIndexedModel* model);
+	static Mesh* LoadModel(IndexedModel* model);
 
 	//Tell openGL to display the model onscreen.
 	void Render();
@@ -27,7 +27,7 @@ private:
 	Mesh();
 
 	//Initialise the mesh based on the given vertices, normals, and UV coordinates.
-	void InitialiseModel(ObjIndexedModel* model);
+	void InitialiseModel(IndexedModel* model);
 
 	const static short bufferCount = 4;
 	unsigned int drawCount;

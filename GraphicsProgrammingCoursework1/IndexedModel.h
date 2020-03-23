@@ -3,6 +3,8 @@
 
 #include "Aliases.h"
 
+#if BLEP
+
 class IndexedModel
 {
 	public:
@@ -13,5 +15,7 @@ class IndexedModel
 
 		void CalculateNormals();
 };
+
+#endif
 
 #endif

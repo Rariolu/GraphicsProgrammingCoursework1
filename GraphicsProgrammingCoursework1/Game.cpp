@@ -45,7 +45,8 @@ void Game::ResourceSetup()
 	//Models
 
 	//SetupMesh("mon", "..\\Resources\\monkey3.obj");
-	SetupMesh(mario, marioFile);
+	//SetupMesh(mario, marioFile);
+	SetupMesh(mario, monkeyFile);
 
 	//Textures
 
@@ -68,7 +69,8 @@ void Game::ResourceSetup()
 void Game::SetupMesh(string name, string objfile)
 {
 	OBJModel model(objfile);
-	ObjIndexedModel imodel = model.ToIndexedModel();
+	//ObjIndexedModel imodel = model.ToIndexedModel();
+	IndexedModel imodel = model.ToIndexedModel();
 	Mesh* mesh = Mesh::LoadModel(&imodel);
 	if (mesh)
 	{

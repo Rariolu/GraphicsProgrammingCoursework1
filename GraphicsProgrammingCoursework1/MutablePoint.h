@@ -27,6 +27,8 @@ struct MutablePoint
 		//Add the given value to either the X, Y, or Z
 		//position (depending on the given axis).
 		virtual void Translate(AXIS axis, float a);
+
+		virtual void Translate(Vec3 movement);
 	protected:
 		//The (x,y,z) position of this point.
 		Vec3 position;

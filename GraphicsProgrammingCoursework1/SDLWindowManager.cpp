@@ -64,7 +64,7 @@ bool SDLWindowManager::Initialise(string windowTitle, float width, float height)
 	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, bufferSize);
 	SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, bufferSize);
 
-	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
+	//SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
 
 	//Create a double buffer (two RGB buffers that are alternated between).
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);

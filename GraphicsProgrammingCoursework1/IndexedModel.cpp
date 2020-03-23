@@ -1,5 +1,7 @@
 #include "IndexedModel.h"
 
+#if BLEP
+
 void IndexedModel::CalculateNormals()
 {
 	for (unsigned int i = 0; i < indices.size(); i += 3)
@@ -21,3 +23,5 @@ void IndexedModel::CalculateNormals()
 		normals[i] = glm::normalize(normals[i]);
 	}
 }
+
+#endif

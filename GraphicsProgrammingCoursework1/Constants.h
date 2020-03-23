@@ -7,13 +7,16 @@
 
 const string mario = "Mario";
 const string marioFile = "..\\Resources\\Mario.obj";
+const string monkeyFile = "..\\Resources\\monkey3.obj";
 
 //Textures
 
 const string texture1 = "joker";
-const string texture1File = "..\\Resources\\Joker_1.png";
+//const string texture1File = "..\\Resources\\Joker_1.png";
+const string texture1File = "..\\Resources\\Water.jpg";
 const string skyboxFiles = "..\\Resources\\skybox_temp\\skybox";
 const string skyboxFiles2 = "..\\Resources\\skybox_temp2\\blep";
+const string nightSkyBoxFiles = "..\\Resources\\skybox_temp3\\night";
 
 //Shaders
 
