@@ -23,6 +23,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="CubeMap.cpp" />
+    <ClCompile Include="ExplodingObject.cpp" />
     <ClCompile Include="ExplosionShader.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -53,6 +54,7 @@
     <ClInclude Include="Collider.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="CubeMap.h" />
+    <ClInclude Include="ExplodingObject.h" />
     <ClInclude Include="ExplosionShader.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
