@@ -2,6 +2,16 @@
 
 QuadMShader::QuadMShader(string vertFile, string fragFile) : GameObjectShader(vertFile, fragFile)
 {
+	Init();
+}
+
+QuadMShader::QuadMShader(string geomFile, string vertFile, string fragFile) : GameObjectShader(geomFile, vertFile, fragFile)
+{
+	Init();
+}
+
+void QuadMShader::Init()
+{
 	GLuint program = GetProgram();
 
 	glBindAttribLocation(program, 0, "position");
