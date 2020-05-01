@@ -8,11 +8,15 @@ class ExplosionShader :	public QuadMShader
 	public:
 		ExplosionShader(string vertFile, string fragFile);
 		ExplosionShader(string geomFile, string vertFile, string fragFile);
+		void Init();
+		void IncreaseTime(float delta);
 		void SetExploding(bool exp);
 		void Update(Transform* transform, Camera* camera);
-	
+		
 	private:
 		bool exploding = false;
+		float t = 0;
+		GLuint timeUniform;
 };
 
 #endif
