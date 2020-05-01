@@ -2,12 +2,12 @@
 
 ExplosionShader::ExplosionShader(string vertFile, string fragFile) : QuadMShader(vertFile,fragFile)
 {
-
+	Init();
 }
 
 ExplosionShader::ExplosionShader(string geomFile, string vertFile, string fragFile) : QuadMShader(geomFile, vertFile, fragFile)
 {
-
+	Init();
 }
 
 void ExplosionShader::Init()
