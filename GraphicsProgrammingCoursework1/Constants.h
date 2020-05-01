@@ -28,6 +28,11 @@ const string skyboxShaderName = "skybox";
 const string skyboxShaderVertFile = "..\\Resources\\skyboxShader.vert";
 const string skyboxShaderFragFile = "..\\Resources\\skyboxShader.frag";
 
+const string explosionShaderName = "explosionShader";
+const string explosionShaderGeomFile = "..\\Resources\\explosionShader.geom";
+const string explosionShaderVertFile = "..\\Resources\\explosionShader.vert";
+const string explosionShaderFragFile = "..\\Resources\\explosionShader.frag";
+
 //Scenes
 
 const string sceneName = "graphicsCourseworkScene";
