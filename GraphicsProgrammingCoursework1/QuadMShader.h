@@ -8,7 +8,7 @@ class QuadMShader : public GameObjectShader
 	public:
 		QuadMShader(string vertFile, string fragFile);
 		QuadMShader(string geomFile, string vertFile, string fragFile);
-		void Update(Transform* transform, Camera* camera);
+		virtual void Update(Transform* transform, Camera* camera);
 	private:
 		void Init();
 		GLuint uniforms[4];
