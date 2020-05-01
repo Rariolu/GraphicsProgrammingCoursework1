@@ -5,3 +5,9 @@ GameObjectShader::GameObjectShader(string vertFile, string fragFile) :
 {
 
 }
+
+GameObjectShader::GameObjectShader(string geomFile, string vertFile, string fragFile) :
+	Shader(geomFile,vertFile,fragFile)
+{
+
+}

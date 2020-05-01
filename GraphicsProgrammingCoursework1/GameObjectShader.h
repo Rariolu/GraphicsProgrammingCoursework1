@@ -9,6 +9,7 @@ class GameObjectShader : public Shader
 {
 	public:
 		GameObjectShader(string vertFile, string fragFile);
+		GameObjectShader(string geomFile, string vertFile, string fragFile);
 		virtual void Update(Transform* transform, Camera* camera)=0;
 };
 
