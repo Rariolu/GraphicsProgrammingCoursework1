@@ -58,6 +58,9 @@ void Game::ResourceSetup()
 	QuadMShader* shader = new QuadMShader(tempShaderVertFile, tempShaderFragFile);
 	resourceManager->AddShader(tempShader, shader);
 
+	QuadMShader* explosionShader = new QuadMShader(explosionShaderGeomFile, explosionShaderVertFile, explosionShaderFragFile);
+	resourceManager->AddShader(explosionShaderName, explosionShader);
+
 	SkyBoxShader* skyboxShader = new SkyBoxShader(skyboxShaderVertFile, skyboxShaderFragFile);
 	resourceManager->AddShader(skyboxShaderName, skyboxShader);
 
