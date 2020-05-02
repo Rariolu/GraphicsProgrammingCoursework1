@@ -61,6 +61,7 @@ class Shader
 		//The address of the executable program.
 		GLuint program;
 
+		//The addresses of GLSL shaders
 		vector<GLuint> shaders;
 };
 
