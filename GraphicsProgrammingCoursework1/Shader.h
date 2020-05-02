@@ -16,7 +16,6 @@ class Shader
 	public:
 		Shader(string geomFile, string vertFile, string fragFile);
 		Shader(string vertFile, string fragFile);
-		//Shader(vector<ShaderDef> shaderDefinitions);
 		Shader(ShaderDef* shaderDefinitions, unsigned int length);
 
 		//Tell openGL to use the executable program associated with this
@@ -26,26 +25,26 @@ class Shader
 		//Set the value of the float uniform
 		//at the given address.
 		void SetFloat(GLuint address, float value);
+		void SetFloat(string name, float value);
 
 		void SetInt(GLuint address, int value);
-
-		//Set the value of the vec2 uniform
-		//at the given address.
-		void SetVec2(GLuint address, Vec2 value);
-
-		//Set the value of the vec3 uniform
-		//at the given address.
-		void SetVec3(GLuint address, Vec3 value);
+		void SetInt(string name, int value);
 
 		//Set the value of the mat4 uniform
 		//at the given address.
 		void SetMatrix(GLuint address, Matrix value);
-
-		void SetFloat(string name, float value);
-		void SetInt(string name, int value);
-		void SetVec2(string name, Vec2 value);
-		void SetVec3(string name, Vec3 value);
 		void SetMatrix(string name, Matrix value);
+
+		//Set the value of the vec2 uniform
+		//at the given address.
+		void SetVec2(GLuint address, Vec2 value);
+		void SetVec2(string name, Vec2 value);
+
+		//Set the value of the vec3 uniform
+		//at the given address.
+		void SetVec3(GLuint address, Vec3 value);
+		void SetVec3(string name, Vec3 value);
+
 	protected:
 		//Return the address of the executable program.
 		GLuint GetProgram();

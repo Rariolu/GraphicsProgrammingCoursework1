@@ -3,55 +3,14 @@
 Shader::Shader(string geomFile, string vertFile, string fragFile)
 	: Shader(new ShaderDef[3]{{geomFile,GL_GEOMETRY_SHADER},{vertFile,GL_VERTEX_SHADER},{fragFile,GL_FRAGMENT_SHADER}},3)
 {
-	//program = glCreateProgram();
-	//string geomShader = LoadText(geomFile);
-	//shaders.push_back(CreateShader(geomShader, GL_GEOMETRY_SHADER));
-	//
-	//string vertexShader = LoadText(vertFile);
-	//shaders.push_back(CreateShader(vertexShader, GL_VERTEX_SHADER));
-	//
-	//string fragShader = LoadText(fragFile);
-	//CreateShader(fragShader, GL_FRAGMENT_SHADER);
 
-	//AttachShaders();
-
-
-	//glLinkProgram(program);
-	//glValidateProgram(program);
 }
 
 Shader::Shader(string vertFile, string fragFile) :
 Shader(new ShaderDef[2]{{vertFile,GL_VERTEX_SHADER},{fragFile,GL_FRAGMENT_SHADER} },2)
 {
-	//program = glCreateProgram();
-
-	//string vertexShader = LoadText(vertFile);
-	//shaders.push_back(CreateShader(vertexShader, GL_VERTEX_SHADER));
-
-	//string fragShader = LoadText(fragFile);
-	//CreateShader(fragShader, GL_FRAGMENT_SHADER);
-
-	//AttachShaders();
-
-	//glLinkProgram(program);
-	//glValidateProgram(program);
+	
 }
-
-//Shader::Shader(vector<ShaderDef> shaderDefinitions)
-//{
-//	program = glCreateProgram();
-//
-//	for (ShaderDef shaderDef : shaderDefinitions)
-//	{
-//		string shaderText = LoadText(shaderDef.file);
-//		shaders.push_back(CreateShader(shaderText, shaderDef.type));
-//	}
-//
-//	AttachShaders();
-//
-//	glLinkProgram(program);
-//	glValidateProgram(program);
-//}
 
 Shader::Shader(ShaderDef* shaderDefinitions, unsigned int length)
 {
@@ -80,29 +39,14 @@ void Shader::SetFloat(GLuint address, float value)
 	glUniform1f(address, value);
 }
 
-void Shader::SetInt(GLuint address, int value)
-{
-	glUniform1i(address, value);
-}
-
-void Shader::SetVec2(GLuint address, Vec2 value)
-{
-	glUniform2fv(address, 1, &value[0]);
-}
-
-void Shader::SetVec3(GLuint address, Vec3 value)
-{
-	glUniform3fv(address, 1, &value[0]);
-}
-
-void Shader::SetMatrix(GLuint address, Matrix value)
-{
-	glUniformMatrix4fv(address, 1, GL_FALSE, &value[0][0]);
-}
-
 void Shader::SetFloat(string name, float value)
 {
 	SetFloat(glGetUniformLocation(program, name.c_str()), value);
+}
+
+void Shader::SetInt(GLuint address, int value)
+{
+	glUniform1i(address, value);
 }
 
 void Shader::SetInt(string name, int value)
@@ -110,19 +54,34 @@ void Shader::SetInt(string name, int value)
 	SetInt(glGetUniformLocation(program, name.c_str()), value);
 }
 
-void Shader::SetVec2(string name, Vec2 value)
+void Shader::SetMatrix(GLuint address, Matrix value)
 {
-	SetVec2(glGetUniformLocation(program, name.c_str()), value);
-}
-
-void Shader::SetVec3(string name, Vec3 value)
-{
-	SetVec3(glGetUniformLocation(program, name.c_str()), value);
+	glUniformMatrix4fv(address, 1, GL_FALSE, &value[0][0]);
 }
 
 void Shader::SetMatrix(string name, Matrix value)
 {
 	SetMatrix(glGetUniformLocation(program, name.c_str()), value);
+}
+
+void Shader::SetVec2(GLuint address, Vec2 value)
+{
+	glUniform2fv(address, 1, &value[0]);
+}
+
+void Shader::SetVec2(string name, Vec2 value)
+{
+	SetVec2(glGetUniformLocation(program, name.c_str()), value);
+}
+
+void Shader::SetVec3(GLuint address, Vec3 value)
+{
+	glUniform3fv(address, 1, &value[0]);
+}
+
+void Shader::SetVec3(string name, Vec3 value)
+{
+	SetVec3(glGetUniformLocation(program, name.c_str()), value);
 }
 
 GLuint Shader::GetProgram()
