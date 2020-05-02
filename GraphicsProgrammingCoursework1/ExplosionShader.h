@@ -11,7 +11,6 @@ class ExplosionShader :	public QuadMShader
 		void IncreaseTime(float delta);
 		void SetExploding(bool exp);
 		void Update(Transform* transform, Camera* camera);
-		
 	private:
 		void Init();
 		bool exploding = false;

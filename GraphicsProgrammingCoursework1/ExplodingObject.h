@@ -5,7 +5,8 @@
 
 class ExplodingObject : public GameObject
 {
-
+	public:
+	private:
 };
 
 #endif
