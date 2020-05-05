@@ -22,7 +22,7 @@ namespace GraphicsProgramming
 			bool exploding = false;
 			const float defaultT = -1.570796327f;
 			float t = defaultT;
-			float magnitude = 10.0f;
+			float magnitude;
 			
 			GLuint timeUniform;
 			GLuint magUniform;

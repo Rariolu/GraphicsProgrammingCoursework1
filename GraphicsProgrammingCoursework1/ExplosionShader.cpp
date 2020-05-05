@@ -23,7 +23,6 @@ namespace GraphicsProgramming
 		GLuint program = GetProgram();
 		timeUniform = glGetUniformLocation(program, "time");
 		magUniform = glGetUniformLocation(program, "explosionMagnitude");
-		SetFloat(magUniform, magnitude);
 	}
 
 	void ExplosionShader::IncreaseTime(float delta)
