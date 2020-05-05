@@ -5,12 +5,18 @@
 #include "Transform.h"
 #include "Camera.h"
 
-class GameObjectShader : public Shader
+namespace GraphicsProgramming
 {
-	public:
-		GameObjectShader(string vertFile, string fragFile);
-		GameObjectShader(string geomFile, string vertFile, string fragFile);
-		virtual void Update(Transform* transform, Camera* camera)=0;
-};
 
+	class GameObjectShader : public Shader
+	{
+		public:
+			GameObjectShader(string vertFile, string fragFile);
+			GameObjectShader(string geomFile, string vertFile, string fragFile);
+			virtual ~GameObjectShader();
+			virtual void Update(Transform* transform, Camera* camera) = 0;
+	};
+
+
+}
 #endif
