@@ -67,6 +67,7 @@
     <ClInclude Include="MutablePoint.h" />
     <ClInclude Include="ObjLoader.h" />
     <ClInclude Include="QuadMShader.h" />
+    <ClInclude Include="Recs.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SDLWindowManager.h" />

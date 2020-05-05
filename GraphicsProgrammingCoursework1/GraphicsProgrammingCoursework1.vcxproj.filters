@@ -185,6 +185,9 @@
     <ClInclude Include="ExplodingObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Recs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
