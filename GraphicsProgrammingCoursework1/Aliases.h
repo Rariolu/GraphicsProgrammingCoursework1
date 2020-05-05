@@ -8,30 +8,35 @@
 #include <string>
 #include <vector>
 
-using Vec2 = glm::vec2;
-using Vec3 = glm::vec3;
-using Vec4 = glm::vec4;
-using Matrix = glm::mat4;
-using Mat3 = glm::mat3;
+namespace GraphicsProgramming
+{
 
-using InputFileStream = std::ifstream;
+	using Vec2 = glm::vec2;
+	using Vec3 = glm::vec3;
+	using Vec4 = glm::vec4;
+	using Matrix = glm::mat4;
+	using Mat3 = glm::mat3;
 
-template<typename T, typename U>
-using map = std::map<T, U>;
+	using InputFileStream = std::ifstream;
 
-template<typename T, typename U>
-using pair = std::pair<T, U>;
+	template<typename T, typename U>
+	using map = std::map<T, U>;
 
-using string = std::string;
+	template<typename T, typename U>
+	using pair = std::pair<T, U>;
 
-template<typename T>
-using strmap = map<string, T>;
+	using string = std::string;
+
+	template<typename T>
+	using strmap = map<string, T>;
 
 
-template<typename T>
-using strpair = pair<string, T>;
+	template<typename T>
+	using strpair = pair<string, T>;
 
-template <typename T>
-using vector = std::vector<T>;
+	template <typename T>
+	using vector = std::vector<T>;
+
+}
 
 #endif

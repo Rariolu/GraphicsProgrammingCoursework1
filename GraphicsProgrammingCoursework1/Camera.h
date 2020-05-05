@@ -5,31 +5,36 @@
 #include "Aliases.h"
 #include "MutablePoint.h"
 
-class Camera : public MutablePoint
+namespace GraphicsProgramming
 {
-	public:
-		Camera(float fieldOfView, float aspectRatio, float nearClip, float farClip, Vec3 pos = Vec3(0, 0, 0));
 
-		//Get the Vec3 forward direction of this camera.
-		Vec3* GetForward();
+	class Camera : public MutablePoint
+	{
+		public:
+			Camera(float fieldOfView, float aspectRatio, float nearClip, float farClip, Vec3 pos = Vec3(0, 0, 0));
 
-		//Get the Vec3 up direction of this camera.
-		Vec3* GetUp();
+			//Get the Vec3 forward direction of this camera.
+			Vec3* GetForward();
 
-		//Calculate a ViewProjection matrix to
-		//be given to the shader to render the
-		//3D world from the camera's perspective.
-		Matrix GetViewProjection() const;
-		Matrix GetView() const;
-		Matrix GetProjection() const;
+			//Get the Vec3 up direction of this camera.
+			Vec3* GetUp();
 
-		void RotateY(float angle);
-		void Rotate(AXIS axis, float angle);
+			//Calculate a ViewProjection matrix to
+			//be given to the shader to render the
+			//3D world from the camera's perspective.
+			Matrix GetViewProjection() const;
+			Matrix GetView() const;
+			Matrix GetProjection() const;
 
-	private:
-		Vec3 forward;
-		Matrix projection;
-		Vec3 up;
-};
+			void RotateY(float angle);
+			void Rotate(AXIS axis, float angle);
+
+		private:
+			Vec3 forward;
+			Matrix projection;
+			Vec3 up;
+	};
+
+}
 
 #endif
