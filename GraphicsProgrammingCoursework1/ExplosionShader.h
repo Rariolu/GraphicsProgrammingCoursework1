@@ -3,19 +3,31 @@
 
 #include "QuadMShader.h"
 
-class ExplosionShader :	public QuadMShader
+namespace GraphicsProgramming
 {
-	public:
-		ExplosionShader(string vertFile, string fragFile);
-		ExplosionShader(string geomFile, string vertFile, string fragFile);
-		void IncreaseTime(float delta);
-		void SetExploding(bool exp);
-		void Update(Transform* transform, Camera* camera);
-	private:
-		void Init();
-		bool exploding = false;
-		float t = 0;
-		GLuint timeUniform;
-};
+
+	class ExplosionShader : public QuadMShader
+	{
+		public:
+			ExplosionShader(string vertFile, string fragFile);
+			ExplosionShader(string geomFile, string vertFile, string fragFile);
+			~ExplosionShader();
+			void IncreaseTime(float delta);
+			void SetExploding(bool exp);
+			void SetExplosionMagnitude(float mag);
+			void ToggleExploding();
+			void Update(Transform* transform, Camera* camera);
+		private:
+			void Init();
+			bool exploding = false;
+			const float defaultT = -1.570796327f;
+			float t = defaultT;
+			float magnitude = 10.0f;
+			
+			GLuint timeUniform;
+			GLuint magUniform;
+	};
+
+}
 
 #endif

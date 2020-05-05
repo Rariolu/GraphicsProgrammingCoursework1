@@ -20,7 +20,7 @@ uniform float explosionMagnitude;
 
 vec4 explode(vec4 position, vec3 normal)
 {
-//Amout of explosion
+	//Amout of explosion
     float magnitude = explosionMagnitude;//> 0 ? explosionMagnitude : 8.0;
 	//Direction of explosion, going along normal
     vec3 direction = normal * ((sin(time) + 1.0) / 2.0) * magnitude; 

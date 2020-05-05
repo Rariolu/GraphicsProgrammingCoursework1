@@ -3,20 +3,22 @@
 
 #include "Scene.h"
 #include "Constants.h"
+#include "ExplodingObject.h"
 
 namespace GraphicsProgramming
 {
 
 	class GraphicsCourseworkScene : public Scene
 	{
-	public:
-		void Initialise();
-	private:
-		bool KeyDown(SDL_Keycode keycode);
-		bool MouseDown(SDL_MouseButtonEvent mousebutton);
-		bool Update();
-		const float rSpeed = 5.0f;
-		const float tSpeed = 20.0f;
+		public:
+			void Initialise();
+		private:
+			bool KeyDown(SDL_Keycode keycode);
+			bool MouseDown(SDL_MouseButtonEvent mousebutton);
+			bool Update();
+			ExplodingObject* exploder;
+			const float rSpeed = 5.0f;
+			const float tSpeed = 20.0f;
 	};
 
 }
