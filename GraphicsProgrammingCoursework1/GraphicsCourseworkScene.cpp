@@ -1,32 +1,35 @@
 #include "GraphicsCourseworkScene.h"
 
-void GraphicsCourseworkScene::Initialise()
+namespace GraphicsProgramming
 {
-	Scene::Initialise();
-	GameObject* obj = AddGameObject(mario, texture1, tempShader);
-	//obj->SetPosition(0, -100, 300.0f);
-	obj->SetPosition(0, 0, 10);
-	obj->Rotate(AXIS::Y, 180.0f);
-	SkyBox* sky = new SkyBox(skyboxFiles, skyboxShaderName);
-	SetSkyBox(sky);
-}
 
-bool GraphicsCourseworkScene::KeyDown(SDL_Keycode keycode)
-{
-	switch (keycode)
+	void GraphicsCourseworkScene::Initialise()
 	{
+		Scene::Initialise();
+		GameObject* obj = AddGameObject(mario, texture1, tempShader);
+		//obj->SetPosition(0, -100, 300.0f);
+		obj->SetPosition(0, 0, 10);
+		obj->Rotate(AXIS::Y, 180.0f);
+		SkyBox* sky = new SkyBox(skyboxFiles, skyboxShaderName);
+		SetSkyBox(sky);
+	}
+
+	bool GraphicsCourseworkScene::KeyDown(SDL_Keycode keycode)
+	{
+		switch (keycode)
+		{
 		case SDLK_ESCAPE:
 		{
 			return false;
 		}
 		case SDLK_a:
 		{
-			camera->Rotate(AXIS::Y,rSpeed * DeltaTime());
+			camera->Rotate(AXIS::Y, rSpeed * DeltaTime());
 			break;
 		}
 		case SDLK_d:
 		{
-			camera->Rotate(AXIS::Y,-rSpeed * DeltaTime());
+			camera->Rotate(AXIS::Y, -rSpeed * DeltaTime());
 			break;
 		}
 		case SDLK_w:
@@ -39,17 +42,19 @@ bool GraphicsCourseworkScene::KeyDown(SDL_Keycode keycode)
 			camera->Translate((-(*camera->GetForward())) * DeltaTime() * tSpeed);
 			break;
 		}
+		}
+		return true;
 	}
-	return true;
-}
 
-bool GraphicsCourseworkScene::MouseDown(SDL_MouseButtonEvent mousebutton)
-{
-	return true;
-}
+	bool GraphicsCourseworkScene::MouseDown(SDL_MouseButtonEvent mousebutton)
+	{
+		return true;
+	}
 
 
-bool GraphicsCourseworkScene::Update()
-{
-	return true;
+	bool GraphicsCourseworkScene::Update()
+	{
+		return true;
+	}
+
 }

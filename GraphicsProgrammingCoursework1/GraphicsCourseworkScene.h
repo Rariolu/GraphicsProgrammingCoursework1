@@ -4,8 +4,11 @@
 #include "Scene.h"
 #include "Constants.h"
 
-class GraphicsCourseworkScene : public Scene
+namespace GraphicsProgramming
 {
+
+	class GraphicsCourseworkScene : public Scene
+	{
 	public:
 		void Initialise();
 	private:
@@ -14,6 +17,8 @@ class GraphicsCourseworkScene : public Scene
 		bool Update();
 		const float rSpeed = 5.0f;
 		const float tSpeed = 20.0f;
-};
+	};
+
+}
 
 #endif
