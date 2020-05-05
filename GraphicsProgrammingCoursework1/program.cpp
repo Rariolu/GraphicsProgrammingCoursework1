@@ -1,6 +1,7 @@
 #include "Game.h"
 
 #undef main
+using namespace GraphicsProgramming;
 
 int main()
 {
