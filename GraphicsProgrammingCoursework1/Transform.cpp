@@ -49,17 +49,17 @@ namespace GraphicsProgramming
 		//but with the value of the given axis being increased by r).
 		switch (axis)
 		{
-		case AXIS::X:
-			SetRotation(rotation.x + r, rotation.y, rotation.z);
-			break;
-		case AXIS::Y:
-			SetRotation(rotation.x, rotation.y + r, rotation.z);
-			break;
-		case AXIS::Z:
-			SetRotation(rotation.x, rotation.y, rotation.z + r);
-			break;
-		default:
-			break;
+			case AXIS::X:
+				SetRotation(rotation.x + r, rotation.y, rotation.z);
+				break;
+			case AXIS::Y:
+				SetRotation(rotation.x, rotation.y + r, rotation.z);
+				break;
+			case AXIS::Z:
+				SetRotation(rotation.x, rotation.y, rotation.z + r);
+				break;
+			default:
+				break;
 		}
 	}
 

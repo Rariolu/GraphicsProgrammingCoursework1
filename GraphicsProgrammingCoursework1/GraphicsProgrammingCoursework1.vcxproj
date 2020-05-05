@@ -83,6 +83,10 @@
     <None Include="..\Resources\explosionShader.frag" />
     <None Include="..\Resources\explosionShader.geom" />
     <None Include="..\Resources\explosionShader.vert" />
+    <None Include="..\Resources\quadMShader.frag" />
+    <None Include="..\Resources\quadMShader.vert" />
+    <None Include="..\Resources\skyboxShader.frag" />
+    <None Include="..\Resources\skyboxShader.vert" />
     <None Include="cpp.hint" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

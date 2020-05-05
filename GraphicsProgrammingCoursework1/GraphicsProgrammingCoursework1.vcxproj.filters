@@ -200,5 +200,17 @@
     <None Include="..\Resources\explosionShader.vert">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="..\Resources\quadMShader.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Resources\quadMShader.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Resources\skyboxShader.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Resources\skyboxShader.vert">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
