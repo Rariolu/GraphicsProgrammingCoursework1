@@ -17,6 +17,10 @@ namespace GraphicsProgramming
 		//memory.
 		delete audioDevice;
 		delete camera;
+		if (skybox)
+		{
+			delete skybox;
+		}
 		Dispose();
 	}
 
