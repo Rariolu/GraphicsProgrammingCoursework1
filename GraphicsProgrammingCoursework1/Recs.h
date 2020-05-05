@@ -5,7 +5,9 @@
 
 namespace GraphicsProgramming
 {
-	const string quadMVert =R"str(
+	/*map<unsigned int, string> quadMShaders =
+	{
+		{GL_VERTEX_SHADER,R"str(
 #version 120
 
 attribute vec3 position;
@@ -25,9 +27,10 @@ void main()
 	gl_Position = transform * vec4(position, 1.0);
 	texCoord0 = texCoord;
 }
-)str";
+)str"	},
 
-	const string quadMFrag = R"str(
+
+		{GL_FRAGMENT_SHADER, R"str(
 #version 120
 
 varying vec2 texCoord0;
@@ -38,7 +41,8 @@ void main()
 {
 	gl_FragColor = texture2D(diffuse, texCoord0);
 }
-)str";
+)str"	}
+	};*/
 }
 
 #endif
