@@ -1,39 +1,49 @@
 #include "QuadMShader.h"
 
-QuadMShader::QuadMShader(string vertFile, string fragFile) : GameObjectShader(vertFile, fragFile)
+namespace GraphicsProgramming
 {
-	Init();
-}
 
-QuadMShader::QuadMShader(string geomFile, string vertFile, string fragFile) : GameObjectShader(geomFile, vertFile, fragFile)
-{
-	Init();
-}
+	QuadMShader::QuadMShader(string vertFile, string fragFile) : GameObjectShader(vertFile, fragFile)
+	{
+		Init();
+	}
 
-void QuadMShader::Init()
-{
-	GLuint program = GetProgram();
+	QuadMShader::QuadMShader(string geomFile, string vertFile, string fragFile) : GameObjectShader(geomFile, vertFile, fragFile)
+	{
+		Init();
+	}
 
-	glBindAttribLocation(program, 0, "position");
-	glBindAttribLocation(program, 1, "texCoord");
+	QuadMShader::~QuadMShader()
+	{
+		GameObjectShader::~GameObjectShader();
+	}
 
-	uniforms[0] = glGetUniformLocation(program, "positionMatrix");
-	uniforms[1] = glGetUniformLocation(program, "rotationMatrix");
-	uniforms[2] = glGetUniformLocation(program, "scaleMatrix");
-	uniforms[3] = glGetUniformLocation(program, "viewProjection");
-}
+	void QuadMShader::Init()
+	{
+		GLuint program = GetProgram();
 
-void QuadMShader::Update(Transform* transform, Camera* camera)
-{
-	Matrix positionMatrix = glm::translate(*transform->GetPosition());
-	Vec3 r = *transform->GetRotation();
-	Matrix rotX = glm::rotate(r.x, Vec3(1, 0, 0));
-	Matrix rotY = glm::rotate(r.y, Vec3(0, 1, 0));
-	Matrix rotZ = glm::rotate(r.z, Vec3(0, 0, 1));
-	Matrix rotationMatrix = rotX * rotY * rotZ;
-	Matrix scaleMatrix = glm::scale(*transform->GetScale());
-	SetMatrix(uniforms[0], positionMatrix);
-	SetMatrix(uniforms[1], rotationMatrix);
-	SetMatrix(uniforms[2], scaleMatrix);
-	SetMatrix(uniforms[3], camera->GetViewProjection());
+		glBindAttribLocation(program, 0, "position");
+		glBindAttribLocation(program, 1, "texCoord");
+
+		uniforms[0] = glGetUniformLocation(program, "positionMatrix");
+		uniforms[1] = glGetUniformLocation(program, "rotationMatrix");
+		uniforms[2] = glGetUniformLocation(program, "scaleMatrix");
+		uniforms[3] = glGetUniformLocation(program, "viewProjection");
+	}
+
+	void QuadMShader::Update(Transform* transform, Camera* camera)
+	{
+		Matrix positionMatrix = glm::translate(*transform->GetPosition());
+		Vec3 r = *transform->GetRotation();
+		Matrix rotX = glm::rotate(r.x, Vec3(1, 0, 0));
+		Matrix rotY = glm::rotate(r.y, Vec3(0, 1, 0));
+		Matrix rotZ = glm::rotate(r.z, Vec3(0, 0, 1));
+		Matrix rotationMatrix = rotX * rotY * rotZ;
+		Matrix scaleMatrix = glm::scale(*transform->GetScale());
+		SetMatrix(uniforms[0], positionMatrix);
+		SetMatrix(uniforms[1], rotationMatrix);
+		SetMatrix(uniforms[2], scaleMatrix);
+		SetMatrix(uniforms[3], camera->GetViewProjection());
+	}
+
 }
