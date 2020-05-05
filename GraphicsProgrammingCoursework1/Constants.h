@@ -12,6 +12,9 @@ namespace GraphicsProgramming
 	const string marioFile = "..\\Resources\\Mario.obj";
 	const string monkeyFile = "..\\Resources\\monkey3.obj";
 
+	const string ballMeshName = "ball";
+	const string ballMeshFile = "..\\Resources\\ball.obj";
+
 	//Textures
 
 	const string texture1 = "joker";

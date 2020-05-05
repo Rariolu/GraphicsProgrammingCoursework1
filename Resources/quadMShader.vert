@@ -14,6 +14,6 @@ void main()
 {
 	mat4 model = positionMatrix * rotationMatrix * scaleMatrix;
 	mat4 transform = viewProjection * model;
-	gl_Position = transform * vec4(position, 1.0);
 	texCoord0 = texCoord;
+	gl_Position = transform * vec4(position, 1.0);
 }
