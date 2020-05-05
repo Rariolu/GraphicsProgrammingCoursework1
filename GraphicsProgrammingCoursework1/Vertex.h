@@ -3,9 +3,12 @@
 
 #include "Aliases.h"
 
-//A struct representing an indiviual mesh vertex.
-struct Vertex
+namespace GraphicsProgramming
 {
+
+	//A struct representing an indiviual mesh vertex.
+	struct Vertex
+	{
 	public:
 		Vertex(Vec3 position, Vec3 normal, Vec2 uv)
 		{
@@ -29,6 +32,8 @@ struct Vertex
 		Vec3* normal;
 		Vec3* position;
 		Vec2* uv;
-};
+	};
+
+}
 
 #endif

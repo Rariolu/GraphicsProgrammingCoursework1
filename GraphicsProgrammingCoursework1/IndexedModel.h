@@ -3,10 +3,13 @@
 
 #include "Aliases.h"
 
+namespace GraphicsProgramming
+{
+
 #if BLEP
 
-class IndexedModel
-{
+	class IndexedModel
+	{
 	public:
 		vector<Vec3> positions;
 		vector<Vec2> uvCoordinates;
@@ -14,8 +17,10 @@ class IndexedModel
 		vector<unsigned int> indices;
 
 		void CalculateNormals();
-};
+	};
 
 #endif
+
+}
 
 #endif

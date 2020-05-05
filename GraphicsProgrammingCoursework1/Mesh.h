@@ -8,31 +8,36 @@
 #include "ObjLoader.h"
 #include "Vertex.h"
 
-//A class which represents a set of vertices, normals,
-//and UV coordinates, which are used to display a 3D model.
-class Mesh
+namespace GraphicsProgramming
 {
-public:
-	~Mesh();
 
-	//Generate a mesh from a set of vertices, normals, and UV coordinates.
-	static Mesh* LoadModel(IndexedModel* model);
+	//A class which represents a set of vertices, normals,
+	//and UV coordinates, which are used to display a 3D model.
+	class Mesh
+	{
+	public:
+		~Mesh();
 
-	//Tell openGL to display the model onscreen.
-	void Render();
-private:
+		//Generate a mesh from a set of vertices, normals, and UV coordinates.
+		static Mesh* LoadModel(IndexedModel* model);
 
-	//Create a new instance of "Mesh" (private so that instances can
-	//only be made with the "LoadModel" method).
-	Mesh();
+		//Tell openGL to display the model onscreen.
+		void Render();
+	private:
 
-	//Initialise the mesh based on the given vertices, normals, and UV coordinates.
-	void InitialiseModel(IndexedModel* model);
+		//Create a new instance of "Mesh" (private so that instances can
+		//only be made with the "LoadModel" method).
+		Mesh();
 
-	const static short bufferCount = 4;
-	unsigned int drawCount;
-	GLuint vertexArrayObject;
-	GLuint vertexArrayBuffers[bufferCount];
-};
+		//Initialise the mesh based on the given vertices, normals, and UV coordinates.
+		void InitialiseModel(IndexedModel* model);
+
+		const static short bufferCount = 4;
+		unsigned int drawCount;
+		GLuint vertexArrayObject;
+		GLuint vertexArrayBuffers[bufferCount];
+	};
+
+}
 
 #endif

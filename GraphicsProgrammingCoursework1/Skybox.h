@@ -5,8 +5,11 @@
 #include "SkyBoxShader.h"
 #include "ResourceManager.h"
 
-class SkyBox
+namespace GraphicsProgramming
 {
+
+	class SkyBox
+	{
 	public:
 		SkyBox(string cubeMapName, string shaderName);
 		SkyBox(CubeMap* cubeMap, SkyBoxShader* shader);
@@ -58,6 +61,8 @@ class SkyBox
 			-6.0f, -6.0f, 6.0f,
 			6.0f, -6.0f, 6.0f
 		};
-};
+	};
+
+}
 
 #endif

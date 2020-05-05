@@ -5,8 +5,11 @@
 #include "glew.h"
 #include "Logger.h"
 
-class SDLWindowManager
+namespace GraphicsProgramming
 {
+
+	class SDLWindowManager
+	{
 	public:
 		//Destroy this instance of "SDLWindowManager",
 		//deleting the openGL context and the sdl window
@@ -60,6 +63,8 @@ class SDLWindowManager
 
 		//A pointer to the "SDL_Window" instance.
 		SDL_Window* sdlWindow;
-};
+	};
+
+}
 
 #endif

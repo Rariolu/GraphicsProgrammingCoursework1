@@ -1,94 +1,99 @@
 #include "Game.h"
 
-Game* Game::instance = nullptr;
-
-Game::Game()
+namespace GraphicsProgramming
 {
-	resourceManager = ResourceManager::Instance();
-	windowManager = nullptr;
-}
 
-Game::~Game()
-{
-	Dispose();
-}
+	Game* Game::instance = nullptr;
 
-Game* Game::Instance()
-{
-	if (!instance)
+	Game::Game()
 	{
-		return instance = new Game();
+		resourceManager = ResourceManager::Instance();
+		windowManager = nullptr;
 	}
-	return instance;
-}
 
-int Game::CreateWindow(string windowTitle, float width, float height)
-{
-	bool initialised = SDLWindowManager::GenerateWindowManager(windowTitle, width, height, windowManager);
-	if (!initialised)
+	Game::~Game()
 	{
-		return -1;
+		Dispose();
 	}
-	ResourceSetup();
-	Run(sceneName);
-	return 0;
-}
 
-void Game::Dispose()
-{
-	delete resourceManager;
-	delete windowManager;
-}
-
-void Game::ResourceSetup()
-{
-	//Models
-
-	//SetupMesh("mon", "..\\Resources\\monkey3.obj");
-	//SetupMesh(mario, marioFile);
-	SetupMesh(mario, monkeyFile);
-
-	//Textures
-
-	ModelTexture* texture = new ModelTexture(texture1File);
-	resourceManager->AddModelTexture(texture1, texture);
-
-	//Shaders
-
-	QuadMShader* shader = new QuadMShader(tempShaderVertFile, tempShaderFragFile);
-	resourceManager->AddShader(tempShader, shader);
-
-	QuadMShader* explosionShader = new QuadMShader(explosionShaderGeomFile, explosionShaderVertFile, explosionShaderFragFile);
-	resourceManager->AddShader(explosionShaderName, explosionShader);
-
-	SkyBoxShader* skyboxShader = new SkyBoxShader(skyboxShaderVertFile, skyboxShaderFragFile);
-	resourceManager->AddShader(skyboxShaderName, skyboxShader);
-
-	//Scenes
-
-	resourceManager->AddScene(sceneName, new GraphicsCourseworkScene());
-}
-
-void Game::SetupMesh(string name, string objfile)
-{
-	OBJModel model(objfile);
-	//ObjIndexedModel imodel = model.ToIndexedModel();
-	IndexedModel imodel = model.ToIndexedModel();
-	Mesh* mesh = Mesh::LoadModel(&imodel);
-	if (mesh)
+	Game* Game::Instance()
 	{
-		resourceManager->AddMesh(name, mesh);
+		if (!instance)
+		{
+			return instance = new Game();
+		}
+		return instance;
 	}
-}
 
-void Game::Run(string startScene)
-{
-	string nextScene = startScene;
-	Scene* currentScene;
-	while (currentScene = resourceManager->GetScene(nextScene))
+	int Game::CreateWindow(string windowTitle, float width, float height)
 	{
-		currentScene->Initialise();
-		nextScene = currentScene->Run();
-		currentScene->Dispose();
+		bool initialised = SDLWindowManager::GenerateWindowManager(windowTitle, width, height, windowManager);
+		if (!initialised)
+		{
+			return -1;
+		}
+		ResourceSetup();
+		Run(sceneName);
+		return 0;
 	}
+
+	void Game::Dispose()
+	{
+		delete resourceManager;
+		delete windowManager;
+	}
+
+	void Game::ResourceSetup()
+	{
+		//Models
+
+		//SetupMesh("mon", "..\\Resources\\monkey3.obj");
+		//SetupMesh(mario, marioFile);
+		SetupMesh(mario, monkeyFile);
+
+		//Textures
+
+		ModelTexture* texture = new ModelTexture(texture1File);
+		resourceManager->AddModelTexture(texture1, texture);
+
+		//Shaders
+
+		QuadMShader* shader = new QuadMShader(tempShaderVertFile, tempShaderFragFile);
+		resourceManager->AddShader(tempShader, shader);
+
+		QuadMShader* explosionShader = new QuadMShader(explosionShaderGeomFile, explosionShaderVertFile, explosionShaderFragFile);
+		resourceManager->AddShader(explosionShaderName, explosionShader);
+
+		SkyBoxShader* skyboxShader = new SkyBoxShader(skyboxShaderVertFile, skyboxShaderFragFile);
+		resourceManager->AddShader(skyboxShaderName, skyboxShader);
+
+		//Scenes
+
+		resourceManager->AddScene(sceneName, new GraphicsCourseworkScene());
+	}
+
+	void Game::SetupMesh(string name, string objfile)
+	{
+		OBJModel model(objfile);
+		//ObjIndexedModel imodel = model.ToIndexedModel();
+		IndexedModel imodel = model.ToIndexedModel();
+		Mesh* mesh = Mesh::LoadModel(&imodel);
+		if (mesh)
+		{
+			resourceManager->AddMesh(name, mesh);
+		}
+	}
+
+	void Game::Run(string startScene)
+	{
+		string nextScene = startScene;
+		Scene* currentScene;
+		while (currentScene = resourceManager->GetScene(nextScene))
+		{
+			currentScene->Initialise();
+			nextScene = currentScene->Run();
+			currentScene->Dispose();
+		}
+	}
+
 }

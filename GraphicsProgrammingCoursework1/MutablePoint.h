@@ -3,16 +3,19 @@
 
 #include "Aliases.h"
 
-enum class AXIS
+namespace GraphicsProgramming
 {
-	X, Y, Z
-};
 
-//A struct representing a specific object
-//in 3D space which can be moved around
-//(may add rotation later).
-struct MutablePoint
-{
+	enum class AXIS
+	{
+		X, Y, Z
+	};
+
+	//A struct representing a specific object
+	//in 3D space which can be moved around
+	//(may add rotation later).
+	struct MutablePoint
+	{
 	public:
 		//Returns the address of the (x,y,z) position
 		//of this point.
@@ -32,6 +35,8 @@ struct MutablePoint
 	protected:
 		//The (x,y,z) position of this point.
 		Vec3 position;
-};
+	};
+
+}
 
 #endif

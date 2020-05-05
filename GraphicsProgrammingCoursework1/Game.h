@@ -10,10 +10,13 @@
 #include "GraphicsCourseworkScene.h"
 #include "SkyBoxShader.h"
 
-//A class which manages the entire
-//program.
-class Game
+namespace GraphicsProgramming
 {
+
+	//A class which manages the entire
+	//program.
+	class Game
+	{
 	public:
 		static Game* Instance();
 
@@ -47,6 +50,8 @@ class Game
 
 		//The current instance of this class.
 		static Game* instance;
-};
+	};
+
+}
 
 #endif

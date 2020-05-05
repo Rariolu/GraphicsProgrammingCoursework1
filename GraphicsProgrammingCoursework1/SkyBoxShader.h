@@ -4,11 +4,16 @@
 #include "Shader.h"
 #include "Camera.h"
 
-class SkyBoxShader : public Shader
+namespace GraphicsProgramming
 {
+
+	class SkyBoxShader : public Shader
+	{
 	public:
 		SkyBoxShader(string vertFile, string fragFile);
 		void Bind(Camera* camera);
-};
+	};
+
+}
 
 #endif

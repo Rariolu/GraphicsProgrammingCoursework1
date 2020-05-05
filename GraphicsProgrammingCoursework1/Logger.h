@@ -3,10 +3,15 @@
 
 #include "Aliases.h"
 
-//Output given string
-void Log(string str);
+namespace GraphicsProgramming
+{
 
-//Output given char array
-void Log(const char* cstr);
+	//Output given string
+	void Log(string str);
 
+	//Output given char array
+	void Log(const char* cstr);
+
+
+}
 #endif
