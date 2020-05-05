@@ -20,6 +20,31 @@ namespace GraphicsProgramming
 		SetSkyBox(sky);
 	}
 
+	void GraphicsCourseworkScene::Fire()
+	{
+		//Instantiate a projectile
+		ProjectileGameObject* ball = new ProjectileGameObject();
+
+		//Set the direction of the projectile according to the
+		//camera's orientation.
+		Vec3* forward = camera->GetForward();
+		ball->SetDirection(*forward);
+
+		//Set the initial position of the projectile to be offset
+		//from the camera's position.
+		const float d = 0.5f;
+		Vec3 pos = (*camera->GetPosition()) + ((*forward) * d);
+		ball->SetPosition(pos);
+
+		//Add the projectile to the collection of rendered gameobjects
+		//and the collection of projectiles (which are updated in order
+		//to move and collide).
+		AddGameObject(ball);
+
+		projectiles.insert(std::make_pair((int)ball, ball));
+		//projectiles.push_back(ball);
+	}
+
 	bool GraphicsCourseworkScene::KeyDown(SDL_Keycode keycode)
 	{
 		switch (keycode)
@@ -50,7 +75,8 @@ namespace GraphicsProgramming
 			}
 			case SDLK_SPACE:
 			{
-				exploder->ToggleExploding();
+				Fire();
+				//exploder->ToggleExploding();
 				break;
 			}
 		}
@@ -65,7 +91,15 @@ namespace GraphicsProgramming
 
 	bool GraphicsCourseworkScene::Update()
 	{
-		exploder->Update(DeltaTime());
+		float d = DeltaTime();
+
+		exploder->Update(d);
+
+		for (pair<int, ProjectileGameObject*> ball : projectiles)
+		{
+			ball.second->Update(d);
+		}
+
 		return true;
 	}
 

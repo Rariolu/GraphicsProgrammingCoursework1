@@ -51,6 +51,8 @@ namespace GraphicsProgramming
 		//SetupMesh(mario, marioFile);
 		SetupMesh(mario, monkeyFile);
 
+		SetupMesh(ballMeshName, ballMeshFile);
+
 		//Textures
 
 		ModelTexture* texture = new ModelTexture(texture1File);
