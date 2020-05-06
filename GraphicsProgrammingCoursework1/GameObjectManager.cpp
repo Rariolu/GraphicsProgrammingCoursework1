@@ -30,8 +30,8 @@ namespace GraphicsProgramming
 		map<int, GameObject*>::iterator iter = gameObjects.find((int)gameObject);
 		if (iter != gameObjects.end())
 		{
-			delete iter->second;
-			gameObjects.erase(iter);
+			//delete iter->second;
+			iter = gameObjects.erase(iter);
 		}
 	}
 
