@@ -18,6 +18,14 @@ namespace GraphicsProgramming
 		return result;
 	}
 
+	float WithinDistance(Vec3 pos1, Vec3 pos2, float distance)
+	{
+		//Determine the square of the distance between the two positions.
+		float dSquared = SquareValue(pos1.x - pos2.x) + SquareValue(pos1.y - pos2.y) + SquareValue(pos1.z - pos2.z);
+
+		return dSquared <= SquareValue(distance);
+	}
+
 	string* LoadText(string filename)
 	{
 		InputFileStream file;

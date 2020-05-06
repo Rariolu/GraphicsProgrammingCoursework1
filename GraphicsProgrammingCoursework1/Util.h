@@ -9,6 +9,8 @@ namespace GraphicsProgramming
 	//Find the index of a requested character after a given start point in a string.
 	unsigned int FindIndexOf(unsigned int start, const char* str, unsigned int length, char token);
 
+	float WithinDistance(Vec3 pos1, Vec3 pos2, float distance);
+
 	//Return the text stored in the given file path.
 	string* LoadText(string filename);
 
