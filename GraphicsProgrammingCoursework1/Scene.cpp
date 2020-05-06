@@ -123,15 +123,7 @@ namespace GraphicsProgramming
 	void Scene::RemoveGameObject(GameObject* gameObject)
 	{
 		gameObjectManager.RemoveGameObject(gameObject);
-		/*if (gameObjects.size() > 0)
-		{
-			map<int, GameObject*>::iterator iter = gameObjects.find((int)gameObject);
-			if (iter != gameObjects.end())
-			{
-				delete iter->second;
-				gameObjects.erase(iter);
-			}
-		}*/
+		delete gameObject;
 	}
 
 	void Scene::SetNextScene(string scenename)
