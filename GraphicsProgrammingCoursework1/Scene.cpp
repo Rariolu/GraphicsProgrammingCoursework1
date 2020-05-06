@@ -27,13 +27,13 @@ namespace GraphicsProgramming
 	void Scene::Dispose()
 	{
 		initialised = false;
-		for (pair<int, GameObject*> goPair : gameObjects)
-		{
-			delete goPair.second;
-		}
+		//for (pair<int, GameObject*> goPair : gameObjects)
+		//{
+		//	delete goPair.second;
+		//}
 		//Delete all the gameobjects from memory 
 		//to free up resources.
-		gameObjects.clear();
+		//gameObjects.clear();
 		nextScene = "";
 	}
 
@@ -100,8 +100,8 @@ namespace GraphicsProgramming
 		//camera.
 		gameObject->SetCamera(camera);
 		//gameObjects.push_back(gameObject);
-		gameObjects.insert(std::make_pair((int)gameObject, gameObject));
-
+		//gameObjects.insert(std::make_pair((int)gameObject, gameObject));
+		gameObjectManager.AddGameObject(gameObject);
 	}
 
 	float Scene::DeltaTime()
@@ -122,14 +122,16 @@ namespace GraphicsProgramming
 
 	void Scene::RemoveGameObject(GameObject* gameObject)
 	{
-		if (gameObjects.size() > 0)
+		gameObjectManager.RemoveGameObject(gameObject);
+		/*if (gameObjects.size() > 0)
 		{
 			map<int, GameObject*>::iterator iter = gameObjects.find((int)gameObject);
 			if (iter != gameObjects.end())
 			{
+				delete iter->second;
 				gameObjects.erase(iter);
 			}
-		}
+		}*/
 	}
 
 	void Scene::SetNextScene(string scenename)
@@ -189,7 +191,7 @@ namespace GraphicsProgramming
 		sdlWindowManager->ClearDisplay(1.0f, 0.5f, 1.0f, 1.0f);
 
 		//Iterate through the gameobjects and render them.
-		for (pair<int,GameObject*> goPair : gameObjects)//(GameObject* go : gameObjects)
+		for (pair<int,GameObject*> goPair : *(gameObjectManager.GetDict()))//(GameObject* go : gameObjects)
 		{
 			goPair.second->Render();
 		}

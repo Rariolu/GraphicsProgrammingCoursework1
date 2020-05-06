@@ -27,6 +27,7 @@
     <ClCompile Include="ExplosionShader.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="GameObjectShader.cpp" />
     <ClCompile Include="GraphicsCourseworkScene.cpp" />
     <ClCompile Include="IndexedModel.cpp" />
@@ -60,6 +61,7 @@
     <ClInclude Include="ExplosionShader.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="GameObjectShader.h" />
     <ClInclude Include="GraphicsCourseworkScene.h" />
     <ClInclude Include="IndexedModel.h" />

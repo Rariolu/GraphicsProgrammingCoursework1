@@ -7,6 +7,7 @@
 #include "SDLWindowManager.h"
 #include "AudioDevice.h"
 #include "Skybox.h"
+#include "GameObjectManager.h"
 
 namespace GraphicsProgramming
 {
@@ -105,8 +106,7 @@ namespace GraphicsProgramming
 			bool initialised = false;
 
 			//The list of gameobjects to be rendered.
-			//vector<GameObject*> gameObjects;
-			map<int, GameObject*> gameObjects;
+			GameObjectManager gameObjectManager;
 
 			//The name of the next scene to be loaded.
 			string nextScene = "";

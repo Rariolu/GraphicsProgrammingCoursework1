@@ -20,6 +20,18 @@ namespace GraphicsProgramming
 		SetSkyBox(sky);
 	}
 
+	void GraphicsCourseworkScene::DestroyProjectile(ProjectileGameObject* ball)
+	{
+		projectiles.RemoveGameObject(ball);
+		RemoveGameObject(ball);
+		//map<int, ProjectileGameObject*>::iterator iter = projectiles.find((int)ball);
+		//if (iter != projectiles.end())
+		//{
+		//	projectiles.erase(iter);
+		//	RemoveGameObject(ball);
+		//}
+	}
+
 	void GraphicsCourseworkScene::Fire()
 	{
 		//Instantiate a projectile
@@ -41,7 +53,8 @@ namespace GraphicsProgramming
 		//to move and collide).
 		AddGameObject(ball);
 
-		projectiles.insert(std::make_pair((int)ball, ball));
+		projectiles.AddGameObject(ball);
+		//projectiles.insert(std::make_pair((int)ball, ball));
 		//projectiles.push_back(ball);
 	}
 
@@ -95,9 +108,10 @@ namespace GraphicsProgramming
 
 		exploder->Update(d);
 
-		for (pair<int, ProjectileGameObject*> ball : projectiles)
+		//for (pair<int, ProjectileGameObject*> ball : projectiles)
+		for(pair<int,GameObject*> ball : *(projectiles.GetDict()))
 		{
-			ball.second->Update(d);
+			((ProjectileGameObject*)ball.second)->Update(d);
 		}
 
 		return true;

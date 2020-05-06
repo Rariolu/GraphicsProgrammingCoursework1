@@ -14,13 +14,14 @@ namespace GraphicsProgramming
 		public:
 			void Initialise();
 		private:
+			void DestroyProjectile(ProjectileGameObject* ball);
 			void Fire();
 			bool KeyDown(SDL_Keycode keycode);
 			bool MouseDown(SDL_MouseButtonEvent mousebutton);
 			bool Update();
 
-
-			map<int, ProjectileGameObject*> projectiles;
+			GameObjectManager projectiles;
+			//map<int, ProjectileGameObject*> projectiles;
 
 			ExplodingObject* exploder;
 			const float rSpeed = 5.0f;
