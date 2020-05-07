@@ -9,7 +9,6 @@ namespace GraphicsProgramming
 	class ExplosionShader : public QuadMShader
 	{
 		public:
-			ExplosionShader(string vertFile, string fragFile);
 			ExplosionShader(string geomFile, string vertFile, string fragFile);
 			ExplosionShader(ExplosionShader& explosionShader);
 			~ExplosionShader();
