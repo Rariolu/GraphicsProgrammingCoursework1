@@ -13,6 +13,12 @@ namespace GraphicsProgramming
 		Init();
 	}
 
+	QuadMShader::QuadMShader(QuadMShader& qmShader)
+		: GameObjectShader(qmShader)
+	{
+		Init();
+	}
+
 	QuadMShader::~QuadMShader()
 	{
 		GameObjectShader::~GameObjectShader();

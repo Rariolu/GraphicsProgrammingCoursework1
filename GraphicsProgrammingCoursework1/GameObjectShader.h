@@ -13,6 +13,7 @@ namespace GraphicsProgramming
 		public:
 			GameObjectShader(string vertFile, string fragFile);
 			GameObjectShader(string geomFile, string vertFile, string fragFile);
+			GameObjectShader(GameObjectShader& gameObjectShader);
 			virtual ~GameObjectShader();
 			virtual void Update(Transform* transform, Camera* camera) = 0;
 	};

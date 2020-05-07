@@ -13,6 +13,12 @@ namespace GraphicsProgramming
 		Init();
 	}
 
+	ExplosionShader::ExplosionShader(ExplosionShader& explosionShader)
+		: QuadMShader(explosionShader)
+	{
+		Init();
+	}
+
 	ExplosionShader::~ExplosionShader()
 	{
 		QuadMShader::~QuadMShader();
@@ -45,7 +51,6 @@ namespace GraphicsProgramming
 	void ExplosionShader::SetExplosionMagnitude(float mag)
 	{
 		magnitude = mag;
-		SetFloat(magUniform, mag);
 	}
 
 	void ExplosionShader::ToggleExploding()

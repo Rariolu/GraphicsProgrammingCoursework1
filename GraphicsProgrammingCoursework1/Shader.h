@@ -20,13 +20,16 @@ namespace GraphicsProgramming
 		public:
 			Shader(string geomFile, string vertFile, string fragFile);
 			Shader(string vertFile, string fragFile);
-			Shader(ShaderDef* shaderDefinitions, unsigned int length);
-
+			Shader(ShaderDef* shaderDefs, unsigned int length);
+			Shader(Shader& shader);
 			virtual ~Shader();
 
 			//Tell openGL to use the executable program associated with this
 			//"AbstractShader".
 			void Bind();
+
+			ShaderDef* GetShaderDefinitions();
+			unsigned int GetL();
 
 			//Set the value of the float uniform
 			//at the given address.
@@ -51,6 +54,8 @@ namespace GraphicsProgramming
 			void SetVec3(GLuint address, Vec3 value);
 			void SetVec3(string name, Vec3 value);
 
+		
+
 		protected:
 			//Return the address of the executable program.
 			GLuint GetProgram();
@@ -64,11 +69,16 @@ namespace GraphicsProgramming
 			//before returning its address.
 			GLuint CreateShader(string text, unsigned int type);
 
+			void Init(ShaderDef* shaderDefs, unsigned int length);
+
 			//The address of the executable program.
 			GLuint program;
 
 			//The addresses of GLSL shaders
 			vector<GLuint> shaders;
+
+			ShaderDef* shaderDefinitions;
+			unsigned int l;
 	};
 
 }

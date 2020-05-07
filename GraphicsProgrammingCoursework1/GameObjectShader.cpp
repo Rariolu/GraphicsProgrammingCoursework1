@@ -15,6 +15,12 @@ namespace GraphicsProgramming
 
 	}
 
+	GameObjectShader::GameObjectShader(GameObjectShader& gameObjectShader)
+		: Shader(gameObjectShader)
+	{
+
+	}
+
 	GameObjectShader::~GameObjectShader()
 	{
 		Shader::~Shader();

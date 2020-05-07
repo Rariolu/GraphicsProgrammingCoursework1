@@ -15,36 +15,16 @@ namespace GraphicsProgramming
 
 	}
 
-	Shader::Shader(ShaderDef* shaderDefinitions, unsigned int length)
+	Shader::Shader(ShaderDef* shaderDefs, unsigned int length)
 	{
-		program = glCreateProgram();
+		Init(shaderDefs, length);
+	}
 
-		for (unsigned int i = 0; i < length; i++)
-		{
-			ShaderDef shaderDef = shaderDefinitions[i];
-			string* shaderText = LoadText(shaderDef.file);
-			string text = "";
-			if (shaderText)
-			{
-				text = *shaderText;
-				delete shaderText;
-			}
-			/*else
-			{
-				Log(shaderDef.file+" failed to load.");
-				map<unsigned int, string>::iterator iter = quadMShaders.find(shaderDef.type);
-				if (iter != quadMShaders.end())
-				{
-					text = iter->second;
-				}
-			}*/
-			shaders.push_back(CreateShader(text, shaderDef.type));
-		}
-
-		AttachShaders();
-
-		glLinkProgram(program);
-		glValidateProgram(program);
+	Shader::Shader(Shader& shader)
+	{
+		unsigned int length = shader.GetL();
+		ShaderDef* shaderDefs = shader.GetShaderDefinitions();
+		Init(shaderDefs, length);
 	}
 
 	Shader::~Shader()
@@ -60,6 +40,16 @@ namespace GraphicsProgramming
 	void Shader::Bind()
 	{
 		glUseProgram(program);
+	}
+
+	ShaderDef* Shader::GetShaderDefinitions()
+	{
+		return shaderDefinitions;
+	}
+
+	unsigned int Shader::GetL()
+	{
+		return l;
 	}
 
 	void Shader::SetFloat(GLuint address, float value)
@@ -143,4 +133,37 @@ namespace GraphicsProgramming
 		return shader;
 	}
 
+	void Shader::Init(ShaderDef* shaderDefs, unsigned int length)
+	{
+		program = glCreateProgram();
+
+		shaderDefinitions = shaderDefs;
+		l = length;
+		for (unsigned int i = 0; i < length; i++)
+		{
+			ShaderDef shaderDef = shaderDefinitions[i];
+			string* shaderText = LoadText(shaderDef.file);
+			string text = "";
+			if (shaderText)
+			{
+				text = *shaderText;
+				delete shaderText;
+			}
+			/*else
+			{
+				Log(shaderDef.file+" failed to load.");
+				map<unsigned int, string>::iterator iter = quadMShaders.find(shaderDef.type);
+				if (iter != quadMShaders.end())
+				{
+					text = iter->second;
+				}
+			}*/
+			shaders.push_back(CreateShader(text, shaderDef.type));
+		}
+
+		AttachShaders();
+
+		glLinkProgram(program);
+		glValidateProgram(program);
+	}
 }

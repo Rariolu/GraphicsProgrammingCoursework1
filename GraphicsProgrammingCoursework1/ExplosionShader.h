@@ -11,6 +11,7 @@ namespace GraphicsProgramming
 		public:
 			ExplosionShader(string vertFile, string fragFile);
 			ExplosionShader(string geomFile, string vertFile, string fragFile);
+			ExplosionShader(ExplosionShader& explosionShader);
 			~ExplosionShader();
 			void IncreaseTime(float delta);
 			void SetExploding(bool exp);
@@ -20,7 +21,7 @@ namespace GraphicsProgramming
 		private:
 			void Init();
 			bool exploding = false;
-			const float defaultT = -1.570796327f;
+			const float defaultT = 0.0f;//1.570796327f;
 			float t = defaultT;
 			float magnitude;
 			

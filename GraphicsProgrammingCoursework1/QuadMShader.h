@@ -11,6 +11,7 @@ namespace GraphicsProgramming
 	public:
 		QuadMShader(string vertFile, string fragFile);
 		QuadMShader(string geomFile, string vertFile, string fragFile);
+		QuadMShader(QuadMShader& qmShader);
 		virtual ~QuadMShader();
 		virtual void Update(Transform* transform, Camera* camera);
 	private:
