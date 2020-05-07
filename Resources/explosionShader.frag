@@ -1,7 +1,7 @@
 //Version number
 #version 400
 
-//Unfrom variable
+//Unifrom variable
 uniform sampler2D diffuse;
 
 in vec2 texCoord;

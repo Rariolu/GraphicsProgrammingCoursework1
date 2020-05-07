@@ -22,15 +22,20 @@ vec4 explode(vec4 position, vec3 normal)
 {
 	//Amout of explosion
     float magnitude = explosionMagnitude;//> 0 ? explosionMagnitude : 8.0;
+	
+	//The offset required to force the model to be in its
+	//original formation at time index of 0.
+	float offset = -1.570796327;
+	
 	//Direction of explosion, going along normal
-    vec3 direction = normal * ((sin(time-1.570796327) + 1.0) / 2.0) * magnitude; 
+    vec3 direction = normal * ((sin(time+offset) + 1.0) / 2.0) * magnitude; 
 	//Returning position
     return position + vec4(direction, 0.0);
 }
 
 vec3 GetNormal()
 {
-//Getting the normal vector of each vertex
+	//Getting the normal vector of each vertex
    vec3 a = vec3(gl_in[0].gl_Position) - vec3(gl_in[1].gl_Position);
    vec3 b = vec3(gl_in[2].gl_Position) - vec3(gl_in[1].gl_Position);
    //returns the cross product between the two vectors calculated
@@ -39,9 +44,9 @@ vec3 GetNormal()
 
 void main()
 {
-//Getting normal
+	//Getting normal
     vec3 normal = GetNormal();
-//Setting current vertex position
+	//Setting current vertex position
     gl_Position = explode(gl_in[0].gl_Position, normal);
     TexCoords = gs_in[0].texCoords;
     EmitVertex();
