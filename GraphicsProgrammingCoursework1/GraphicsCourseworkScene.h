@@ -5,6 +5,7 @@
 #include "Constants.h"
 #include "ExplodingObject.h"
 #include "ProjectileGameObject.h"
+#include "FlakingObject.h"
 
 namespace GraphicsProgramming
 {
@@ -21,9 +22,10 @@ namespace GraphicsProgramming
 			bool Update();
 
 			GameObjectManager projectiles;
-			//map<int, ProjectileGameObject*> projectiles;
+			GameObjectManager exploders;
+			FlakingObject* flaker;
 
-			ExplodingObject* exploder;
+			//ExplodingObject* exploder;
 			const float rSpeed = 5.0f;
 			const float tSpeed = 20.0f;
 	};

@@ -6,15 +6,33 @@ namespace GraphicsProgramming
 	void GraphicsCourseworkScene::Initialise()
 	{
 		Scene::Initialise();
-		GameObject* obj = AddGameObject(mario, texture1, tempShader);
-		//obj->SetPosition(0, -100, 300.0f);
-		obj->SetPosition(0, 0, 10);
-		obj->Rotate(AXIS::Y, 180.0f);
+
+		camera->SetPosition(0, 0.5f, 0);
+		//GameObject* obj = AddGameObject(pyramidMeshName, texture1, tempShader);
+		//obj->SetPosition(0, -1, 10);
+		//obj->Rotate(AXIS::Y, 180.0f);
 	
-		exploder = new ExplodingObject(mario, explosionShaderName, texture1);
+		ExplodingObject* exploder = ExplodingObject::GetExplodingObject(monkey, explosionShaderName, texture1);
+
+		exploder->SetExplosionMagnitude(2.5f);
+		exploder->SetPosition(5, 0.1f, 5);
+		//exploder->SetScale(0.0025f);
 		AddGameObject(exploder);
-		
-		exploder->SetPosition(0, 0, 5);
+
+		ExplodingObject* exploder2 = ExplodingObject::GetExplodingObject(monkey, explosionShaderName, texture1);
+		//exploder2->SetScale(0.0025f);
+		exploder2->SetExplosionMagnitude(2.5f);
+		exploder2->SetPosition(-10, 0.1f, 1);
+		AddGameObject(exploder2);
+
+		exploders.AddGameObject(exploder);
+		exploders.AddGameObject(exploder2);
+
+		flaker = FlakingObject::GetFlakingObject(mario, purpleFlakeName, marioTextureName);
+		flaker->SetPosition(0, 0, 2.5f);
+		flaker->SetScale(0.0025f);
+		flaker->Rotate(AXIS::Y, 90);
+		AddGameObject(flaker);
 
 		SkyBox* sky = new SkyBox(skyboxFiles, skyboxShaderName);
 		SetSkyBox(sky);
@@ -24,12 +42,6 @@ namespace GraphicsProgramming
 	{
 		projectiles.RemoveGameObject(ball);
 		RemoveGameObject(ball);
-		//map<int, ProjectileGameObject*>::iterator iter = projectiles.find((int)ball);
-		//if (iter != projectiles.end())
-		//{
-		//	projectiles.erase(iter);
-		//	RemoveGameObject(ball);
-		//}
 	}
 
 	void GraphicsCourseworkScene::Fire()
@@ -89,7 +101,6 @@ namespace GraphicsProgramming
 			case SDLK_SPACE:
 			{
 				Fire();
-				//exploder->ToggleExploding();
 				break;
 			}
 		}
@@ -106,13 +117,48 @@ namespace GraphicsProgramming
 	{
 		float d = DeltaTime();
 
-		exploder->Update(d);
+		//exploder->Update(d);
 
-		//for (pair<int, ProjectileGameObject*> ball : projectiles)
+		flaker->Update(d);
+
+		vector<ProjectileGameObject*> destroyedProjectiles;
+		
+		for (pair<int, GameObject*> expl : *(exploders.GetDict()))
+		{
+			ExplodingObject* explodingObject = (ExplodingObject*)expl.second;
+			explodingObject->Update(d);
+		}
+
 		for(pair<int,GameObject*> ball : *(projectiles.GetDict()))
 		{
-			((ProjectileGameObject*)ball.second)->Update(d);
+			ProjectileGameObject* proj = (ProjectileGameObject*)ball.second;
+			proj->Update(d);
+			bool destroyed = false;
+			for (pair<int, GameObject*> expl : *(exploders.GetDict()))
+			{
+				ExplodingObject* explodingObject = (ExplodingObject*)expl.second;
+				//explodingObject->Update(d);
+				if (explodingObject->CollidesWith(proj))
+				{
+					destroyed = true;
+					destroyedProjectiles.push_back(proj);
+					explodingObject->SetExploding(true);
+					explodingObject->SetCollider(nullptr);
+					break;
+				}
+			}
+			if (!destroyed && !WithinDistance(*proj->GetPosition(), *camera->GetPosition(), 10.0f))
+			{
+				destroyedProjectiles.push_back(proj);
+			}
 		}
+
+		for(unsigned int i = 0; i < destroyedProjectiles.size(); i++)
+		{
+			DestroyProjectile(destroyedProjectiles[i]);
+		}
+
+		destroyedProjectiles.clear();
 
 		return true;
 	}
