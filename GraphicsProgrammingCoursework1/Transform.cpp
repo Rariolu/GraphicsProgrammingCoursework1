@@ -78,6 +78,11 @@ namespace GraphicsProgramming
 		SetScale(Vec3(x, y, z));
 	}
 
+	void Transform::SetScale(float scale)
+	{
+		SetScale(Vec3(scale, scale, scale));
+	}
+
 	void Transform::SetScale(Vec3 scale)
 	{
 		this->scale = scale;

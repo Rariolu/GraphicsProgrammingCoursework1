@@ -42,6 +42,8 @@ namespace GraphicsProgramming
 		//size multiplied by these values).
 		void SetScale(float x, float y, float z);
 
+		void SetScale(float scale);
+
 		//Set the scale of the object using a given
 		//vector-3.
 		//(changes size of object to be original
