@@ -59,6 +59,8 @@ namespace GraphicsProgramming
 		protected:
 			//Return the address of the executable program.
 			GLuint GetProgram();
+
+			GLuint GetUniformAddress(string name);
 		private:
 
 			//Attach the openGL shaders to the program

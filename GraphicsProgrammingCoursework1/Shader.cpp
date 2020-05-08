@@ -107,6 +107,16 @@ namespace GraphicsProgramming
 		return program;
 	}
 
+	GLuint Shader::GetUniformAddress(string name)
+	{
+		GLuint address = glGetUniformLocation(program, name.c_str());
+		if (address == -1)
+		{
+			Log("\"" + name + "\" link failed.");
+		}
+		return address;
+	}
+
 	void Shader::AttachShaders()
 	{
 		for (unsigned int i = 0; i < shaders.size(); i++)
