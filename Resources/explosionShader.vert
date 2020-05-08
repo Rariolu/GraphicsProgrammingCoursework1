@@ -22,7 +22,7 @@ uniform mat4 viewProjection;
 void main()
 {
 	mat4 model = positionMatrix * rotationMatrix * scaleMatrix;
-	mat4 transform = viewProjection * model;
+	mat4 mvp = viewProjection * model;
 
 	//Assigning the normal and position data
 	vs_out.v_norm = VertexNormal;
@@ -30,5 +30,5 @@ void main()
 	vs_out.texCoord = VertexTexCoord;
 	
 	// Sets the position of the current vertex
-	gl_Position = transform * vec4(VertexPosition, 1.0);
+	gl_Position = mvp * vec4(VertexPosition, 1.0);
 }
