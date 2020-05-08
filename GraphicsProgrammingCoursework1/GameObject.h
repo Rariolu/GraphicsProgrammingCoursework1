@@ -38,11 +38,11 @@ namespace GraphicsProgramming
 		//Set the camera that's used to render this gameobject.
 		void SetCamera(Camera* cam);
 
-	protected:
 		//Set the collider that's used to determine
 		//collisions with other gameobjects.
 		void SetCollider(Collider* col);
 
+	protected:
 		//A pointer to the "ResourceManager" so that
 		//resources can be loaded (e.g. shaders, textures, etc.).
 		static ResourceManager* rescManager;
