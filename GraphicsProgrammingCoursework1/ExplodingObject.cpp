@@ -2,36 +2,37 @@
 
 namespace GraphicsProgramming
 {
-
-	ExplodingObject::ExplodingObject(string meshName, string shaderName, string textureName)
-		: GameObject(meshName, shaderName, textureName)
-	{
-		Shader* shader = rescManager->GetShader(shaderName);
-		//Init((ExplosionShader*)shader);
-		if (shader)
-		{
-			ExplosionShader* explosionShader;
-			if (explosionShader = dynamic_cast<ExplosionShader*>(shader))
-			{
-				Init(explosionShader);
-			}
-		}
-	}
-
 	ExplodingObject::ExplodingObject(Mesh* mesh, ExplosionShader* shader, ModelTexture* texture) :
 		GameObject(mesh, shader, texture)
 	{
 		Init(shader);
 	}
 
+	ExplodingObject* ExplodingObject::GetExplodingObject(string meshName, string shaderName, string textureName)
+	{
+		Mesh* mesh = rescManager->GetMesh(meshName);
+		Shader* shader = rescManager->GetShader(shaderName);
+		ModelTexture* texture = rescManager->GetModelTexture(textureName);
+		ExplosionShader* eShader = nullptr;
+		if (shader)
+		{
+			eShader = dynamic_cast<ExplosionShader*>(shader);
+			eShader = new ExplosionShader(*eShader);
+		}
+		return new ExplodingObject(mesh, eShader, texture);
+	}
+
 	void ExplodingObject::Init(ExplosionShader* shader)
 	{
 		explosionShader = shader;
 		SetExplosionMagnitude(magnitude);
+		SphereCollider* sphereCollider = new SphereCollider(GetPosition(), 0.5f);
+		SetCollider(sphereCollider);
 	}
 
 	void ExplodingObject::SetExploding(bool exp)
 	{
+		exploding = exp;
 		if (explosionShader)
 		{
 			explosionShader->SetExploding(exp);
@@ -49,9 +50,11 @@ namespace GraphicsProgramming
 
 	void ExplodingObject::ToggleExploding()
 	{
+		exploding = !exploding;
 		if (explosionShader)
 		{
-			explosionShader->ToggleExploding();
+			explosionShader->SetExploding(exploding);
+			//explosionShader->ToggleExploding();
 		}
 	}
 
