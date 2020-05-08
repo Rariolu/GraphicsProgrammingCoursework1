@@ -6,14 +6,20 @@ layout (triangles) in;
 layout (triangle_strip, max_vertices = 3) out;
 
 //Passing in texture coordinates
-in VS_OUT {
-    vec2 texCoords;
+in VS_OUT
+{
+	vec3 v_norm;
+	vec4 v_pos;
+    vec2 texCoord;
 } gs_in[];
 
 //Passing out texture coordinates
-out vec2 TexCoords; 
+out GS_OUT
+{
+	vec2 texCoord;
+} gs_out;
 
-//Uniform variabe
+//Uniform variable
 uniform float time;
 
 uniform float explosionMagnitude;
@@ -21,7 +27,7 @@ uniform float explosionMagnitude;
 vec4 explode(vec4 position, vec3 normal)
 {
 	//Amout of explosion
-    float magnitude = explosionMagnitude;//> 0 ? explosionMagnitude : 8.0;
+    float magnitude = explosionMagnitude;
 	
 	//The offset required to force the model to be in its
 	//original formation at time index of 0.
@@ -46,15 +52,17 @@ void main()
 {
 	//Getting normal
     vec3 normal = GetNormal();
-	//Setting current vertex position
     gl_Position = explode(gl_in[0].gl_Position, normal);
-    TexCoords = gs_in[0].texCoords;
-    EmitVertex();
+    gs_out.texCoord = gs_in[0].texCoord;
+	EmitVertex();
+
     gl_Position = explode(gl_in[1].gl_Position, normal);
-    TexCoords = gs_in[1].texCoords;
-    EmitVertex();
-    gl_Position = explode(gl_in[2].gl_Position, normal);
-    TexCoords = gs_in[2].texCoords;
-    EmitVertex();
-    EndPrimitive();
-}  
+    gs_out.texCoord = gs_in[1].texCoord;
+	EmitVertex();
+    
+	gl_Position = explode(gl_in[2].gl_Position, normal);
+    gs_out.texCoord = gs_in[2].texCoord;
+	EmitVertex();
+    
+	EndPrimitive();
+}
