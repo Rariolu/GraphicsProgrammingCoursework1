@@ -48,15 +48,24 @@ namespace GraphicsProgramming
 		//Models
 
 		//SetupMesh("mon", "..\\Resources\\monkey3.obj");
-		//SetupMesh(mario, marioFile);
-		SetupMesh(mario, monkeyFile);
+		SetupMesh(mario, marioFile);
+
+		SetupMesh(monkey, monkeyFile);
 
 		SetupMesh(ballMeshName, ballMeshFile);
+
+		SetupMesh(pyramidMeshName, pyramidMeshFile);
 
 		//Textures
 
 		ModelTexture* texture = new ModelTexture(texture1File);
 		resourceManager->AddModelTexture(texture1, texture);
+
+		ModelTexture* marioTexture = new ModelTexture(marioTextureFile);
+		resourceManager->AddModelTexture(marioTextureName, marioTexture);
+
+		ModelTexture* t2 = new ModelTexture(texture2File);
+		resourceManager->AddModelTexture(texture2, t2);
 
 		//Shaders
 
@@ -68,6 +77,9 @@ namespace GraphicsProgramming
 
 		ExplosionShader* explosionShader = new ExplosionShader(explosionShaderGeomFile, explosionShaderVertFile, explosionShaderFragFile);
 		resourceManager->AddShader(explosionShaderName, explosionShader);
+
+		PurpleFlakeShader* purpleFlakeShader = new PurpleFlakeShader(purpleFlakeGeomFile, purpleFlakeVertFile, purpleFlakeFragFile);
+		resourceManager->AddShader(purpleFlakeName, purpleFlakeShader);
 
 		SkyBoxShader* skyboxShader = new SkyBoxShader(skyboxShaderVertFile, skyboxShaderFragFile);
 		resourceManager->AddShader(skyboxShaderName, skyboxShader);

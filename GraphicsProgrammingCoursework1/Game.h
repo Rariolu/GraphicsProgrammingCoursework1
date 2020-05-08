@@ -5,10 +5,7 @@
 #include "SDLWindowManager.h"
 #include "ResourceManager.h"
 #include "ObjLoader.h"
-#include "ModelTexture.h"
-#include "QuadMShader.h"
 #include "GraphicsCourseworkScene.h"
-#include "SkyBoxShader.h"
 
 namespace GraphicsProgramming
 {
