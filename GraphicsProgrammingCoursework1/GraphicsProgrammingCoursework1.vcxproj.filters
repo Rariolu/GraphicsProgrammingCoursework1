@@ -105,6 +105,12 @@
     <ClCompile Include="GameObjectManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PurpleFlakeShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlakingObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aliases.h">
@@ -206,6 +212,12 @@
     <ClInclude Include="GameObjectManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PurpleFlakeShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlakingObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -228,6 +240,15 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="..\Resources\skyboxShader.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Resources\purpleFlake.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Resources\purpleFlake.geom">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Resources\purpleFlake.vert">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
