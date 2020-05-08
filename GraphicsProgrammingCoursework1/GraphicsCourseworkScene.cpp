@@ -29,8 +29,8 @@ namespace GraphicsProgramming
 		exploders.AddGameObject(exploder2);
 
 		flaker = FlakingObject::GetFlakingObject(mario, purpleFlakeName, marioTextureName);
-		flaker->SetPosition(0, 0, 2.5f);
-		flaker->SetScale(0.0025f);
+		flaker->SetPosition(0, -0.5f, 2.5f);
+		flaker->SetScale(0.01f);
 		flaker->Rotate(AXIS::Y, 90);
 		AddGameObject(flaker);
 
