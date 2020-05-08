@@ -9,6 +9,7 @@ namespace GraphicsProgramming
 		sdlWindowManager = SDLWindowManager::Instance();
 		camera = new Camera(70.0f, sdlWindowManager->GetScreenWidth() / sdlWindowManager->GetScreenHeight(), 0.01f, 1000.0f);
 		resourceManager = ResourceManager::Instance();
+		skybox = nullptr;
 	}
 
 	Scene::~Scene()
@@ -99,8 +100,6 @@ namespace GraphicsProgramming
 		//according to the position and orientation of that
 		//camera.
 		gameObject->SetCamera(camera);
-		//gameObjects.push_back(gameObject);
-		//gameObjects.insert(std::make_pair((int)gameObject, gameObject));
 		gameObjectManager.AddGameObject(gameObject);
 	}
 

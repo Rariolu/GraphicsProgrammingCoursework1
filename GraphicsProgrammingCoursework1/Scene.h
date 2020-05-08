@@ -49,8 +49,6 @@ namespace GraphicsProgramming
 			//the current one.
 			float DeltaTime();
 
-
-
 			//Remove the given gameobject from the collection
 			//of those that are rendered.
 			void RemoveGameObject(GameObject* gameObject);
@@ -90,7 +88,7 @@ namespace GraphicsProgramming
 			virtual bool MouseDown(SDL_MouseButtonEvent mousebutton) = 0;
 
 			//Iterate through all the gameobjects and render them.
-			void Render();
+			virtual void Render();
 
 			//A vague method intended to be used to update the state
 			//of game objects and return true if the scene loop should
