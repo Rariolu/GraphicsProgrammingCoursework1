@@ -3,7 +3,7 @@
 namespace GraphicsProgramming
 {
 
-	ProjectileGameObject::ProjectileGameObject() : GameObject(ballMeshName, tempShader, texture1)
+	ProjectileGameObject::ProjectileGameObject() : GameObject(ballMeshName, tempShader, texture2)
 	{
 		//Retrieve a pointer to the gameobject's
 		//position vector so that its translation
