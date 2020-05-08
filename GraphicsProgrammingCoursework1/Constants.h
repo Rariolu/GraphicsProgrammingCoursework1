@@ -10,10 +10,17 @@ namespace GraphicsProgramming
 
 	const string mario = "Mario";
 	const string marioFile = "..\\Resources\\Mario.obj";
+	
+	const string monkey = "monkey";
 	const string monkeyFile = "..\\Resources\\monkey3.obj";
 
 	const string ballMeshName = "ball";
 	const string ballMeshFile = "..\\Resources\\ball.obj";
+
+	const string pyramidMeshName = "pyramid";
+	const string pyramidMeshFile = "..\\Resources\\pyramid.obj";
+
+	//const string 
 
 	//Textures
 
@@ -21,8 +28,13 @@ namespace GraphicsProgramming
 	//const string texture1File = "..\\Resources\\Joker_1.png";
 	const string texture1File = "..\\Resources\\Water.jpg";
 	const string skyboxFiles = "..\\Resources\\skybox_temp\\skybox";
-	const string skyboxFiles2 = "..\\Resources\\skybox_temp2\\blep";
-	const string nightSkyBoxFiles = "..\\Resources\\skybox_temp3\\night";
+	//const string skyboxFiles2 = "..\\Resources\\skybox_temp2\\blep";
+	//const string nightSkyBoxFiles = "..\\Resources\\night_skybox\\night";
+	const string marioTextureName = "mario";
+	const string marioTextureFile = "..\\Resources\\Mario.png";
+	
+	const string texture2 = "texture2";
+	const string texture2File = "..\\Resources\\texture2.png";
 
 	//Shaders
 
@@ -35,9 +47,14 @@ namespace GraphicsProgramming
 	const string skyboxShaderFragFile = "..\\Resources\\skyboxShader.frag";
 
 	const string explosionShaderName = "explosionShader";
-	const string explosionShaderGeomFile = "..\\Resources\\explosionShader.geom";
 	const string explosionShaderVertFile = "..\\Resources\\explosionShader.vert";
+	const string explosionShaderGeomFile = "..\\Resources\\explosionShader.geom";
 	const string explosionShaderFragFile = "..\\Resources\\explosionShader.frag";
+
+	const string purpleFlakeName = "purpleFlake";
+	const string purpleFlakeVertFile = "..\\Resources\\purpleFlake.vert";
+	const string purpleFlakeGeomFile = "..\\Resources\\purpleFlake.geom";
+	const string purpleFlakeFragFile = "..\\Resources\\purpleFlake.frag";
 
 	//Scenes
 
