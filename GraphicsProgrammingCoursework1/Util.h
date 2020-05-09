@@ -2,9 +2,11 @@
 #define _UTIL_H
 
 #include "Aliases.h"
+#include "SDL.h"
 
 namespace GraphicsProgramming
 {
+	SDL_Surface* CreateSurface(unsigned int bytesPerPixel, void* pixels, int width, int height, int depth, int pitch);
 
 	//Find the index of a requested character after a given start point in a string.
 	unsigned int FindIndexOf(unsigned int start, const char* str, unsigned int length, char token);

@@ -21,7 +21,7 @@ namespace GraphicsProgramming
 
 		//Attempt to create a window, load external resources into memory,
 		//and execute the default first scene.
-		int CreateWindow(string windowTitle, float width, float height);
+		int CreateWindow(string windowTitle, float width, float height, Icon icon);
 
 		//Dispose of allocated resources.
 		void Dispose();

@@ -4,6 +4,8 @@
 #include "SDL.h"
 #include "glew.h"
 #include "Logger.h"
+#include "Icon.h"
+#include "Util.h"
 
 namespace GraphicsProgramming
 {
@@ -39,6 +41,7 @@ namespace GraphicsProgramming
 		//window buffer (which becomes the new front buffer).
 		void SwapBuffer();
 
+		void SetSDLIcon(Icon icon);
 	private:
 		//Create a new instance of "SDLWindowManager"
 		//(private so that instances can only be created by the

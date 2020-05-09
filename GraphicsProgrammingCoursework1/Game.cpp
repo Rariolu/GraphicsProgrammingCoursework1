@@ -25,13 +25,14 @@ namespace GraphicsProgramming
 		return instance;
 	}
 
-	int Game::CreateWindow(string windowTitle, float width, float height)
+	int Game::CreateWindow(string windowTitle, float width, float height, Icon icon)
 	{
 		bool initialised = SDLWindowManager::GenerateWindowManager(windowTitle, width, height, windowManager);
 		if (!initialised)
 		{
 			return -1;
 		}
+		SDLWindowManager::Instance()->SetSDLIcon(icon);
 		ResourceSetup();
 		Run(sceneName);
 		return 0;

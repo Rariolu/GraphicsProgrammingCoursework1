@@ -53,6 +53,13 @@ namespace GraphicsProgramming
 		SDL_GL_SwapWindow(sdlWindow);
 	}
 
+	void SDLWindowManager::SetSDLIcon(Icon iconStruct)
+	{
+		SDL_Surface* icon = CreateSurface(iconStruct.bytes_per_pixel, (void*)iconStruct.pixel_data, iconStruct.width, iconStruct.height, iconStruct.bytes_per_pixel * 8, iconStruct.bytes_per_pixel * iconStruct.width);
+		SDL_SetWindowIcon(sdlWindow, icon);
+		SDL_FreeSurface(icon);
+	}
+
 	bool SDLWindowManager::Initialise(string windowTitle, float width, float height)
 	{
 		SDL_Init(SDL_INIT_EVERYTHING);
