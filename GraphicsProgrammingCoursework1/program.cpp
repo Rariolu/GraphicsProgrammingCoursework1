@@ -1,9 +1,9 @@
 #include "Game.h"
+#include "FlakeIcon.c"
 
-#undef main
 using namespace GraphicsProgramming;
 
-int main()
+int main(int argc, char* argv[])
 {
-	return Game::Instance()->CreateWindow(windowTitle, windowWidth, windowHeight);
+	return Game::Instance()->CreateWindow(windowTitle, windowWidth, windowHeight, flakeIcon);
 }
