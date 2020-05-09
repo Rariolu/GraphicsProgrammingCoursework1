@@ -21,11 +21,10 @@ uniform mat4 rotationMatrix;
 uniform mat4 scaleMatrix;
 uniform mat4 viewProjection;
 
-//uniform float acceleration;
 uniform float time;
 uniform vec3 force;
 
-vec3 ApplyForce(vec3 pos, float yOff)
+vec3 ApplyForce(vec3 pos)
 {
 	float tOnGround = sqrt(((-2*force.y)*pos.y));
 
@@ -43,12 +42,10 @@ vec3 ApplyForce(vec3 pos, float yOff)
 void main()
 {
 	mat4 model = positionMatrix * rotationMatrix * scaleMatrix;
-	mat4 transform = viewProjection * model;
-
-	float yOffset = -positionMatrix[3][1];
+	mat4 mvp = viewProjection * model;
 
 	vec3 pos = VertexPosition;
-	pos = ApplyForce(pos,yOffset);
+	pos = ApplyForce(pos);
 
 	//Assigning the normal and position data
 	vs_out.v_norm = VertexNormal;
@@ -57,5 +54,5 @@ void main()
 	vs_out.time = time;
 	
 	// Sets the position of the current vertex
-	gl_Position = transform * vec4(pos, 1.0);
+	gl_Position = mvp * vec4(pos, 1.0);
 }

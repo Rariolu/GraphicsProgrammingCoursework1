@@ -25,7 +25,7 @@ out GS_OUT
 vec4 Sway(vec3 normal)
 {
 	float t = gs_in[0].time;
-	float m = 0.025f;
+	float m = 0.25f;
 
 	float xOff = 0.14f;
 	float zOff = 0.41f;
@@ -47,10 +47,10 @@ vec3 GetNormal()
    return normalize(cross(a, b));
 }
 
-float Lerp( float a, float b, float c)
+float Lerp(float a, float b, float c)
 {
     return a + c * (b - a);
-} 
+}
 
 void main()
 {
@@ -66,26 +66,20 @@ void main()
 	float t = gs_in[0].time;
 	float yT = t / 10f;
 	yT = yT > 1 ? 1 : yT;
-	//p1.y = lowestY;
-	//p2.y = lowestY;
-	//p3.y = lowestY;
 	p1.y = Lerp(p1.y, lowestY, yT);
 	p2.y = Lerp(p2.y, lowestY, yT);
 	p3.y = Lerp(p3.y, lowestY, yT);
 
-    //gl_Position = gl_in[0].gl_Position+sway;
     gl_Position = p1;
 	gs_out.texCoord = gs_in[0].texCoord;
 	gs_out.purple = gs_in[0].purple;
 	EmitVertex();
 
-    //gl_Position = gl_in[1].gl_Position+sway;
     gl_Position = p2;
 	gs_out.texCoord = gs_in[1].texCoord;
 	gs_out.purple = gs_in[1].purple;
 	EmitVertex();
     
-	//gl_Position = gl_in[2].gl_Position+sway;
     gl_Position = p3;
 	gs_out.texCoord = gs_in[2].texCoord;
 	gs_out.purple = gs_in[2].purple;
