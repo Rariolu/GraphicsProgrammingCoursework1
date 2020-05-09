@@ -14,9 +14,9 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
+
 [Dd]ebugPublic/
-[Rr]elease/
+
 [Rr]eleases/
 x64/
 x86/
@@ -347,3 +347,5 @@ healthchecksdb
 /Dependencies/glm/include/out/build/x64-Debug/.cmake/api/v1/reply/cmakeFiles-v1-5a68c510792b46a05356.json
 /Dependencies/glm/include/out/build/x64-Debug/.cmake/api/v1/reply/cache-v2-0df3107e595cc55bb0f5.json
 /Dependencies/glm/include/out/build/x64-Debug/CMakeFiles/ShowIncludes/main.obj
+/GraphicsProgrammingCoursework1/Release
+/GraphicsProgrammingCoursework1/Debug
