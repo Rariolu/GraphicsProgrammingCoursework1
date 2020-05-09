@@ -8,19 +8,14 @@ namespace GraphicsProgramming
 		Scene::Initialise();
 
 		camera->SetPosition(0, 0.5f, 0);
-		//GameObject* obj = AddGameObject(pyramidMeshName, texture1, tempShader);
-		//obj->SetPosition(0, -1, 10);
-		//obj->Rotate(AXIS::Y, 180.0f);
 	
 		ExplodingObject* exploder = ExplodingObject::GetExplodingObject(monkey, explosionShaderName, texture1);
 
 		exploder->SetExplosionMagnitude(2.5f);
 		exploder->SetPosition(5, 0.1f, 5);
-		//exploder->SetScale(0.0025f);
 		AddGameObject(exploder);
 
 		ExplodingObject* exploder2 = ExplodingObject::GetExplodingObject(monkey, explosionShaderName, texture1);
-		//exploder2->SetScale(0.0025f);
 		exploder2->SetExplosionMagnitude(2.5f);
 		exploder2->SetPosition(-10, 0.1f, 1);
 		AddGameObject(exploder2);
