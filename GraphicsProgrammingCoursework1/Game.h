@@ -14,39 +14,39 @@ namespace GraphicsProgramming
 	//program.
 	class Game
 	{
-	public:
-		static Game* Instance();
+		public:
+			static Game* Instance();
 
-		~Game();
+			~Game();
 
-		//Attempt to create a window, load external resources into memory,
-		//and execute the default first scene.
-		int CreateWindow(string windowTitle, float width, float height, Icon icon);
+			//Attempt to create a window, load external resources into memory,
+			//and execute the default first scene.
+			int CreateWindow(string windowTitle, float width, float height, Icon icon);
 
-		//Dispose of allocated resources.
-		void Dispose();
+			//Dispose of allocated resources.
+			void Dispose();
 
-	private:
-		Game();
+		private:
+			Game();
 
-		//Load external resources (e.g. textures, models, etc.) into memory
-		void ResourceSetup();
+			//Load external resources (e.g. textures, models, etc.) into memory
+			void ResourceSetup();
 
-		//Load a mesh from a given file path and then
-		//add it into the resource manager using the given name.
-		void SetupMesh(string name, string objfile);
+			//Load a mesh from a given file path and then
+			//add it into the resource manager using the given name.
+			void SetupMesh(string name, string objfile);
 
-		//Run the scene associated with the given name.
-		void Run(string startScene);
+			//Run the scene associated with the given name.
+			void Run(string startScene);
 
-		//A pointer to the resource manager.
-		ResourceManager* resourceManager;
+			//A pointer to the resource manager.
+			ResourceManager* resourceManager;
 
-		//A pointer to the SDL window manager.
-		SDLWindowManager* windowManager;
+			//A pointer to the SDL window manager.
+			SDLWindowManager* windowManager;
 
-		//The current instance of this class.
-		static Game* instance;
+			//The current instance of this class.
+			static Game* instance;
 	};
 
 }
