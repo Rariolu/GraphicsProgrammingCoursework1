@@ -5,7 +5,6 @@
 
 namespace GraphicsProgramming
 {
-
 	//Models
 
 	const string mario = "Mario";
@@ -20,16 +19,11 @@ namespace GraphicsProgramming
 	const string pyramidMeshName = "pyramid";
 	const string pyramidMeshFile = "..\\Resources\\pyramid.obj";
 
-	//const string 
-
 	//Textures
 
 	const string texture1 = "joker";
-	//const string texture1File = "..\\Resources\\Joker_1.png";
-	const string texture1File = "..\\Resources\\Water.jpg";
-	const string skyboxFiles = "..\\Resources\\skybox_temp\\skybox";
-	//const string skyboxFiles2 = "..\\Resources\\skybox_temp2\\blep";
-	//const string nightSkyBoxFiles = "..\\Resources\\night_skybox\\night";
+	const string texture1File = "..\\Resources\\majora's mask.jpg";
+	const string skyboxFiles = "..\\Resources\\skybox\\skybox";
 	const string marioTextureName = "mario";
 	const string marioTextureFile = "..\\Resources\\Mario.png";
 	
@@ -58,14 +52,12 @@ namespace GraphicsProgramming
 
 	//Scenes
 
-	const string sceneName = "graphicsCourseworkScene";
+	const string sceneName = "GraphicsCourseworkScene";
 
 	//Window meta
 
 	const string windowTitle = "GraphicsProgrammingCourseWork";
 	const float windowWidth = 1024.0f;
 	const float windowHeight = 768.0f;
-
-
 }
 #endif
