@@ -16,9 +16,6 @@ namespace GraphicsProgramming
 	const string ballMeshName = "ball";
 	const string ballMeshFile = "..\\Resources\\ball.obj";
 
-	const string pyramidMeshName = "pyramid";
-	const string pyramidMeshFile = "..\\Resources\\pyramid.obj";
-
 	//Textures
 
 	const string texture1 = "joker";

@@ -48,14 +48,11 @@ namespace GraphicsProgramming
 	{
 		//Models
 
-		//SetupMesh("mon", "..\\Resources\\monkey3.obj");
 		SetupMesh(mario, marioFile);
 
 		SetupMesh(monkey, monkeyFile);
 
 		SetupMesh(ballMeshName, ballMeshFile);
-
-		SetupMesh(pyramidMeshName, pyramidMeshFile);
 
 		//Textures
 
@@ -72,9 +69,6 @@ namespace GraphicsProgramming
 
 		QuadMShader* shader = new QuadMShader(tempShaderVertFile, tempShaderFragFile);
 		resourceManager->AddShader(tempShader, shader);
-
-		//QuadMShader* explosionShader = new QuadMShader(explosionShaderGeomFile, explosionShaderVertFile, explosionShaderFragFile);
-		//resourceManager->AddShader(explosionShaderName, explosionShader);
 
 		ExplosionShader* explosionShader = new ExplosionShader(explosionShaderGeomFile, explosionShaderVertFile, explosionShaderFragFile);
 		resourceManager->AddShader(explosionShaderName, explosionShader);
