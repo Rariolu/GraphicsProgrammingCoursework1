@@ -64,8 +64,7 @@ void main()
 
 	float lowestY = min(p1.y,min(p2.y,p3.y));
 	float t = gs_in[0].time;
-	float yT = t / 10f;
-	yT = yT > 1 ? 1 : yT;
+	float yT = t > 10 ? 1 : t/10f;
 	p1.y = Lerp(p1.y, lowestY, yT);
 	p2.y = Lerp(p2.y, lowestY, yT);
 	p3.y = Lerp(p3.y, lowestY, yT);
