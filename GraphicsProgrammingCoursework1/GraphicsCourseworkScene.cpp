@@ -33,6 +33,13 @@ namespace GraphicsProgramming
 		SetSkyBox(sky);
 	}
 
+	void GraphicsCourseworkScene::Dispose()
+	{
+		Scene::Dispose();
+		projectiles.Clear();
+		exploders.Clear();
+	}
+
 	void GraphicsCourseworkScene::DestroyProjectile(ProjectileGameObject* ball)
 	{
 		projectiles.RemoveGameObject(ball);
