@@ -4,6 +4,7 @@
 #include <iostream>
 #include <ft2build.h>
 #include "Shader.h"
+#include "Camera.h"
 #include FT_FREETYPE_H  
 
 namespace GraphicsProgramming
@@ -21,12 +22,15 @@ namespace GraphicsProgramming
 		public:
 			static Font* GetFont(string path);
 			void RenderText(string text, float x, float y, float scale, Vec3 colour);
+			void SetDimensions(float width, float height);
 			void SetShader(Shader* shader);
 		private:
 			Font(FT_Face face, FT_Library ft);
 			map<char, Character> characters;
 			unsigned int VAO, VBO;
 			Shader* textShader;
+			float windowWidth;
+			float windowHeight;
 	};
 
 }

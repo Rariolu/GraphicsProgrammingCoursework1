@@ -91,13 +91,15 @@ namespace GraphicsProgramming
 
 	void Font::RenderText(string text, float x, float y, float scale, Vec3 colour)
 	{
+		Matrix proj = glm::ortho(0.0f, windowWidth, 0.0f, windowHeight);
+
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 		// activate corresponding render state
 		textShader->Bind();
 		textShader->SetVec3("textColor", Vec3(colour.x, colour.y, colour.z));
-		
+		textShader->SetMatrix("projection", proj);//camera->GetProjection());
 		glActiveTexture(GL_TEXTURE0);
 		glBindVertexArray(VAO);
 
@@ -138,6 +140,12 @@ namespace GraphicsProgramming
 		}
 		glBindVertexArray(0);
 		glBindTexture(GL_TEXTURE_2D, 0);
+	}
+
+	void Font::SetDimensions(float width, float height)
+	{
+		windowWidth = width;
+		windowHeight = height;
 	}
 
 	void Font::SetShader(Shader* shader)
