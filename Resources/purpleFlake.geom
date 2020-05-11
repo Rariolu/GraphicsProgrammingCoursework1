@@ -22,6 +22,20 @@ out GS_OUT
 	float purple;
 } gs_out;
 
+vec3 GetNormal()
+{
+	//Getting the normal vector of each vertex
+   vec3 a = vec3(gl_in[0].gl_Position) - vec3(gl_in[1].gl_Position);
+   vec3 b = vec3(gl_in[2].gl_Position) - vec3(gl_in[1].gl_Position);
+   //returns the cross product between the two vectors calculated
+   return normalize(cross(a, b));
+}
+
+float Lerp(float a, float b, float c)
+{
+    return a + c * (b - a);
+}
+
 vec4 Sway(vec3 normal)
 {
 	float t = gs_in[0].time;
@@ -36,20 +50,6 @@ vec4 Sway(vec3 normal)
 	vec3 v = vec3(x,0,z)*normal;
 
 	return vec4(v,0);
-}
-
-vec3 GetNormal()
-{
-	//Getting the normal vector of each vertex
-   vec3 a = vec3(gl_in[0].gl_Position) - vec3(gl_in[1].gl_Position);
-   vec3 b = vec3(gl_in[2].gl_Position) - vec3(gl_in[1].gl_Position);
-   //returns the cross product between the two vectors calculated
-   return normalize(cross(a, b));
-}
-
-float Lerp(float a, float b, float c)
-{
-    return a + c * (b - a);
 }
 
 void main()
