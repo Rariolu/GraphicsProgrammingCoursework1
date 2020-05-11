@@ -18,24 +18,24 @@ namespace GraphicsProgramming
 		//memory.
 		delete audioDevice;
 		delete camera;
-		if (skybox)
-		{
-			delete skybox;
-		}
 		Dispose();
 	}
 
 	void Scene::Dispose()
 	{
 		initialised = false;
-		//for (pair<int, GameObject*> goPair : gameObjects)
-		//{
-		//	delete goPair.second;
-		//}
+		for (pair<int, GameObject*> goPair : *gameObjectManager.GetDict())
+		{
+			delete goPair.second;
+		}
 		//Delete all the gameobjects from memory 
 		//to free up resources.
-		//gameObjects.clear();
+		gameObjectManager.Clear();
 		nextScene = "";
+		if (skybox)
+		{
+			delete skybox;
+		}
 	}
 
 	void Scene::Initialise()
