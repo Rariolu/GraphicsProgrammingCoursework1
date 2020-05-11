@@ -26,7 +26,17 @@ namespace GraphicsProgramming
 			GameObjectManager projectiles;
 			GameObjectManager exploders;
 			FlakingObject* flaker;
-
+			static const int instructionLength = 6;
+			string instructions[instructionLength] =
+			{
+				"Press A to rotate anti-clockwise.",
+				"Press D to rotate clockwise.",
+				"Press W to move forwards.",
+				"Press S to move backwards.",
+				"Press space to fire projectile.",
+				"Hit monkey head for it to explode."
+			};
+			int currentInstruction = 0;
 			const float rSpeed = 5.0f;
 			const float tSpeed = 20.0f;
 	};

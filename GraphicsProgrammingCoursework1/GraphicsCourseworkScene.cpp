@@ -80,26 +80,46 @@ namespace GraphicsProgramming
 			}
 			case SDLK_a:
 			{
+				if (currentInstruction == 0)
+				{
+					currentInstruction++;
+				}
 				camera->Rotate(AXIS::Y, rSpeed * DeltaTime());
 				break;
 			}
 			case SDLK_d:
 			{
+				if (currentInstruction == 1)
+				{
+					currentInstruction++;
+				}
 				camera->Rotate(AXIS::Y, -rSpeed * DeltaTime());
 				break;
 			}
 			case SDLK_w:
 			{
+				if (currentInstruction == 2)
+				{
+					currentInstruction++;
+				}
 				camera->Translate((*camera->GetForward()) * DeltaTime() * tSpeed);
 				break;
 			}
 			case SDLK_s:
 			{
+				if (currentInstruction == 3)
+				{
+					currentInstruction++;
+				}
 				camera->Translate((-(*camera->GetForward())) * DeltaTime() * tSpeed);
 				break;
 			}
 			case SDLK_SPACE:
 			{
+				if (currentInstruction == 4)
+				{
+					currentInstruction++;
+				}
 				Fire();
 				break;
 			}
@@ -114,16 +134,16 @@ namespace GraphicsProgramming
 
 	void GraphicsCourseworkScene::PreGameObjectRender()
 	{
-		Font* arial = resourceManager->GetFont(fontName);
-		arial->RenderText("This is sample text", 25, 25, 1, Vec3(1, 1, 1));
-		arial->RenderText("(C) LearnOpenGL.com", 540.0f, 570.0f, 0.5f, Vec3(0.3, 0.7f, 0.9f));
+		if (currentInstruction < instructionLength)
+		{
+			Font* arial = resourceManager->GetFont(fontName);
+			arial->RenderText(instructions[currentInstruction], 25, 25, 1, Vec3(0, 0, 0));
+		}
 	}
 
 	bool GraphicsCourseworkScene::Update()
 	{
 		float d = DeltaTime();
-
-		//exploder->Update(d);
 
 		flaker->Update(d);
 
@@ -145,6 +165,10 @@ namespace GraphicsProgramming
 				ExplodingObject* explodingObject = (ExplodingObject*)expl.second;
 				if (explodingObject->CollidesWith(proj))
 				{
+					if (currentInstruction == 5)
+					{
+						currentInstruction++;
+					}
 					destroyed = true;
 					destroyedProjectiles.push_back(proj);
 					explodingObject->SetExploding(true);
