@@ -27,6 +27,7 @@
     <ClCompile Include="ExplosionShader.cpp" />
     <ClCompile Include="FlakeIcon.c" />
     <ClCompile Include="FlakingObject.cpp" />
+    <ClCompile Include="Font.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectManager.cpp" />
@@ -63,6 +64,7 @@
     <ClInclude Include="ExplodingObject.h" />
     <ClInclude Include="ExplosionShader.h" />
     <ClInclude Include="FlakingObject.h" />
+    <ClInclude Include="Font.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectManager.h" />
@@ -102,6 +104,8 @@
     <None Include="..\Resources\quadMShader.vert" />
     <None Include="..\Resources\skyboxShader.frag" />
     <None Include="..\Resources\skyboxShader.vert" />
+    <None Include="..\Resources\TextShader.frag" />
+    <None Include="..\Resources\TextShader.vert" />
     <None Include="cpp.hint" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
