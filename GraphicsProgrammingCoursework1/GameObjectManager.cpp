@@ -25,6 +25,11 @@ namespace GraphicsProgramming
 		}
 	}
 
+	void GameObjectManager::Clear()
+	{
+		gameObjects.clear();
+	}
+
 	void GameObjectManager::RemoveGameObject(GameObject* gameObject)
 	{
 		map<int, GameObject*>::iterator iter = gameObjects.find((int)gameObject);

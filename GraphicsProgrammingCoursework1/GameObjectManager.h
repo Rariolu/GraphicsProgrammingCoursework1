@@ -12,6 +12,7 @@ namespace GraphicsProgramming
 			GameObjectManager();
 			~GameObjectManager();
 			void AddGameObject(GameObject* gameObject);
+			void Clear();
 			void RemoveGameObject(GameObject* gameObject);
 			map<int, GameObject*>* GetDict();
 		private:
