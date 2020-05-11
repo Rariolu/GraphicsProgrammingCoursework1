@@ -14,6 +14,7 @@ namespace GraphicsProgramming
 	{
 		public:
 			void Initialise();
+			void Dispose();
 		private:
 			void DestroyProjectile(ProjectileGameObject* ball);
 			void Fire();
@@ -25,7 +26,6 @@ namespace GraphicsProgramming
 			GameObjectManager exploders;
 			FlakingObject* flaker;
 
-			//ExplodingObject* exploder;
 			const float rSpeed = 5.0f;
 			const float tSpeed = 20.0f;
 	};
