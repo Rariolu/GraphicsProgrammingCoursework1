@@ -68,8 +68,6 @@ namespace GraphicsProgramming
 		AddGameObject(ball);
 
 		projectiles.AddGameObject(ball);
-		//projectiles.insert(std::make_pair((int)ball, ball));
-		//projectiles.push_back(ball);
 	}
 
 	bool GraphicsCourseworkScene::KeyDown(SDL_Keycode keycode)
@@ -114,6 +112,12 @@ namespace GraphicsProgramming
 		return true;
 	}
 
+	void GraphicsCourseworkScene::PreGameObjectRender()
+	{
+		Font* arial = resourceManager->GetFont(fontName);
+		arial->RenderText("This is sample text", 25, 25, 1, Vec3(1, 1, 1));
+		arial->RenderText("(C) LearnOpenGL.com", 540.0f, 570.0f, 0.5f, Vec3(0.3, 0.7f, 0.9f));
+	}
 
 	bool GraphicsCourseworkScene::Update()
 	{
@@ -139,7 +143,6 @@ namespace GraphicsProgramming
 			for (pair<int, GameObject*> expl : *(exploders.GetDict()))
 			{
 				ExplodingObject* explodingObject = (ExplodingObject*)expl.second;
-				//explodingObject->Update(d);
 				if (explodingObject->CollidesWith(proj))
 				{
 					destroyed = true;
