@@ -43,6 +43,14 @@ namespace GraphicsProgramming
 		return instance;
 	}
 
+	void ResourceManager::AddFont(string name, Font* font)
+	{
+		if (!GetFont(name))
+		{
+			fonts.insert(strpair<Font*>(name, font));
+		}
+	}
+
 	void ResourceManager::AddMesh(string name, Mesh* mesh)
 	{
 		if (!GetMesh(name))
@@ -76,6 +84,16 @@ namespace GraphicsProgramming
 		{
 			shaders.insert(strpair<Shader*>(name, shader));
 		}
+	}
+
+	Font* ResourceManager::GetFont(string name)
+	{
+		map<string, Font*>::iterator it = fonts.find(name);
+		if (it != fonts.end())
+		{
+			return it->second;
+		}
+		return nullptr;
 	}
 
 	Mesh* ResourceManager::GetMesh(string name)

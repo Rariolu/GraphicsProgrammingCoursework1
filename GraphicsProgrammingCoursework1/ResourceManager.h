@@ -3,7 +3,7 @@
 
 #include "Mesh.h"
 #include "ModelTexture.h"
-#include "Shader.h"
+#include "Font.h"
 
 namespace GraphicsProgramming
 {
@@ -18,10 +18,12 @@ namespace GraphicsProgramming
 	public:
 		~ResourceManager();
 		static ResourceManager* Instance();
+		void AddFont(string name, Font* font);
 		void AddMesh(string name, Mesh* Mesh);
 		void AddModelTexture(string name, ModelTexture* modelTexture);
 		void AddScene(string name, Scene* Scene);
 		void AddShader(string name, Shader* shader);
+		Font* GetFont(string name);
 		Mesh* GetMesh(string name);
 		ModelTexture* GetModelTexture(string name);
 		Scene* GetScene(string name);
@@ -29,6 +31,7 @@ namespace GraphicsProgramming
 	private:
 		ResourceManager();
 		static ResourceManager* instance;
+		strmap<Font*> fonts;
 		strmap<Mesh*> meshes;
 		strmap<ModelTexture*> modelTextures;
 		strmap<Scene*> scenes;
