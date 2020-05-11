@@ -181,8 +181,6 @@ namespace GraphicsProgramming
 		//RGBA values.
 		sdlWindowManager->ClearDisplay(1.0f, 0.5f, 1.0f, 1.0f);
 
-		PreGameObjectRender();
-
 		//Iterate through the gameobjects and render them.
 		for (pair<int,GameObject*> goPair : *(gameObjectManager.GetDict()))
 		{
@@ -193,6 +191,8 @@ namespace GraphicsProgramming
 		{
 			skybox->Render();
 		}
+
+		PostRender();
 
 		glEnableClientState(GL_COLOR_ARRAY);
 		glEnd();

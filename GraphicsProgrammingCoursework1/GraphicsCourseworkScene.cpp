@@ -132,7 +132,7 @@ namespace GraphicsProgramming
 		return true;
 	}
 
-	void GraphicsCourseworkScene::PreGameObjectRender()
+	void GraphicsCourseworkScene::PostRender()
 	{
 		if (currentInstruction < instructionLength)
 		{

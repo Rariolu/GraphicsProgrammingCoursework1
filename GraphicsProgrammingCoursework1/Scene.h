@@ -93,7 +93,7 @@ namespace GraphicsProgramming
 			//Iterate through all the gameobjects and render them.
 			virtual void Render();
 
-			virtual void PreGameObjectRender() = 0;
+			virtual void PostRender() = 0;
 
 			//A vague method intended to be used to update the state
 			//of game objects and return true if the scene loop should

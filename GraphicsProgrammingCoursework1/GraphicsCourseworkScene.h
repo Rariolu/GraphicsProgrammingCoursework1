@@ -20,7 +20,7 @@ namespace GraphicsProgramming
 			void Fire();
 			bool KeyDown(SDL_Keycode keycode);
 			bool MouseDown(SDL_MouseButtonEvent mousebutton);
-			void PreGameObjectRender();
+			void PostRender();
 			bool Update();
 
 			GameObjectManager projectiles;
