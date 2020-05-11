@@ -27,7 +27,8 @@ namespace GraphicsProgramming
 		private:
 			Font(FT_Face face, FT_Library ft);
 			map<char, Character> characters;
-			unsigned int VAO, VBO;
+			unsigned int VAO;
+			unsigned int VBO;
 			Shader* textShader;
 			float windowWidth;
 			float windowHeight;

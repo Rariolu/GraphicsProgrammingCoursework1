@@ -14,6 +14,7 @@ namespace GraphicsProgramming
 				Log("ERROR::FREETYTPE: Failed to load Glyph");
 				continue;
 			}
+			
 			// generate texture
 			unsigned int texture;
 			glGenTextures(1, &texture);
@@ -29,13 +30,16 @@ namespace GraphicsProgramming
 				GL_UNSIGNED_BYTE,
 				face->glyph->bitmap.buffer
 			);
+			
 			// set texture options
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			
 			// now store character for later use
-			Character character = {
+			Character character =
+			{
 				texture,
 				glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
 				glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
@@ -48,8 +52,6 @@ namespace GraphicsProgramming
 
 		FT_Done_Face(face);
 		FT_Done_FreeType(ft);
-
-
 
 		glGenVertexArrays(1, &VAO);
 		glGenBuffers(1, &VBO);
@@ -64,7 +66,6 @@ namespace GraphicsProgramming
 
 	Font* Font::GetFont(string path)
 	{
-		//const char* path = "Resources\\Fonts\\arial.ttf";
 		FT_Library ft;
 		if (FT_Init_FreeType(&ft))
 		{
@@ -99,7 +100,7 @@ namespace GraphicsProgramming
 		// activate corresponding render state
 		textShader->Bind();
 		textShader->SetVec3("textColor", Vec3(colour.x, colour.y, colour.z));
-		textShader->SetMatrix("projection", proj);//camera->GetProjection());
+		textShader->SetMatrix("projection", proj);
 		glActiveTexture(GL_TEXTURE0);
 		glBindVertexArray(VAO);
 
