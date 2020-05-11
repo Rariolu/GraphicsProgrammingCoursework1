@@ -16,12 +16,10 @@ namespace GraphicsProgramming
 			void Init();
 
 			const float acceleration = -1.0f;
-			//Vec3 force = Vec3(1.47f, acceleration, -0.3f);
 			Vec3 force = Vec3(0.01f, acceleration, -0.07f);
 			float time = 0;
 
 			GLuint timeUniform;
-			//GLuint accUniform;
 			GLuint forceUniform;
 	};
 }

@@ -22,7 +22,6 @@ namespace GraphicsProgramming
 	void PurpleFlakeShader::Update(Transform* transform, Camera* camera)
 	{
 		SetVec3(forceUniform, force);
-		//SetFloat(accUniform, acceleration);
 		SetFloat(timeUniform, time);
 		QuadMShader::Update(transform, camera);
 	}
@@ -31,7 +30,6 @@ namespace GraphicsProgramming
 	{
 		GLuint program = GetProgram();
 		timeUniform = GetUniformAddress("time");
-		//accUniform = GetUniformAddress("acceleration");
 		forceUniform = GetUniformAddress("force");
 	}
 }
