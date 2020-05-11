@@ -66,6 +66,9 @@ namespace GraphicsProgramming
 			//from a particular perspective.
 			Camera* camera;
 
+			//A pointer to the resource manager.
+			ResourceManager* resourceManager;
+
 		private:
 
 			//Calculate the quantity of seconds that have passed between the previous
@@ -90,6 +93,8 @@ namespace GraphicsProgramming
 			//Iterate through all the gameobjects and render them.
 			virtual void Render();
 
+			virtual void PreGameObjectRender() = 0;
+
 			//A vague method intended to be used to update the state
 			//of game objects and return true if the scene loop should
 			//continue (and return false if it shouldn't).
@@ -112,8 +117,7 @@ namespace GraphicsProgramming
 			//The time stamp of the previous frame.
 			float previousTimeStamp = 0;
 
-			//A pointer to the resource manager.
-			ResourceManager* resourceManager;
+
 
 			//The sdl window manager of the current openGL
 			//context (used to clear the display and swap buffers).
