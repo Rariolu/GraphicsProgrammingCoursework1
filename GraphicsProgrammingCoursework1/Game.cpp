@@ -79,6 +79,15 @@ namespace GraphicsProgramming
 		SkyBoxShader* skyboxShader = new SkyBoxShader(skyboxShaderVertFile, skyboxShaderFragFile);
 		resourceManager->AddShader(skyboxShaderName, skyboxShader);
 
+		Shader* textShader = new Shader(textShaderVertFile, textShaderFragFile);
+		
+		//Fonts
+
+		Font* arial = Font::GetFont(fontFile);
+		arial->SetShader(textShader);
+		arial->SetDimensions(windowWidth, windowHeight);
+		resourceManager->AddFont(fontName, arial);
+
 		//Scenes
 
 		resourceManager->AddScene(sceneName, new GraphicsCourseworkScene());
