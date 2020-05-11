@@ -47,6 +47,15 @@ namespace GraphicsProgramming
 	const string purpleFlakeGeomFile = "..\\Resources\\purpleFlake.geom";
 	const string purpleFlakeFragFile = "..\\Resources\\purpleFlake.frag";
 
+	const string textShaderName = "textShader";
+	const string textShaderVertFile = "..\\Resources\\TextShader.vert";
+	const string textShaderFragFile = "..\\Resources\\TextShader.frag";
+
+	//Fonts
+
+	const string fontName = "arial";
+	const string fontFile = "..\\Resources\\Fonts\\arial.ttf";
+
 	//Scenes
 
 	const string sceneName = "GraphicsCourseworkScene";
