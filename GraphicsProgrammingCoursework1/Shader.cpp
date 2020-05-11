@@ -59,7 +59,7 @@ namespace GraphicsProgramming
 
 	void Shader::SetFloat(string name, float value)
 	{
-		SetFloat(glGetUniformLocation(program, name.c_str()), value);
+		SetFloat(GetUniformAddress(name), value);
 	}
 
 	void Shader::SetInt(GLuint address, int value)
@@ -69,7 +69,7 @@ namespace GraphicsProgramming
 
 	void Shader::SetInt(string name, int value)
 	{
-		SetInt(glGetUniformLocation(program, name.c_str()), value);
+		SetInt(GetUniformAddress(name), value);
 	}
 
 	void Shader::SetMatrix(GLuint address, Matrix value)
@@ -79,7 +79,7 @@ namespace GraphicsProgramming
 
 	void Shader::SetMatrix(string name, Matrix value)
 	{
-		SetMatrix(glGetUniformLocation(program, name.c_str()), value);
+		SetMatrix(GetUniformAddress(name), value);
 	}
 
 	void Shader::SetVec2(GLuint address, Vec2 value)
@@ -89,7 +89,7 @@ namespace GraphicsProgramming
 
 	void Shader::SetVec2(string name, Vec2 value)
 	{
-		SetVec2(glGetUniformLocation(program, name.c_str()), value);
+		SetVec2(GetUniformAddress(name), value);
 	}
 
 	void Shader::SetVec3(GLuint address, Vec3 value)
@@ -99,7 +99,7 @@ namespace GraphicsProgramming
 
 	void Shader::SetVec3(string name, Vec3 value)
 	{
-		SetVec3(glGetUniformLocation(program, name.c_str()), value);
+		SetVec3(GetUniformAddress(name), value);
 	}
 
 	GLuint Shader::GetProgram()
