@@ -96,8 +96,8 @@ namespace GraphicsProgramming
 	void Game::SetupMesh(string name, string objfile)
 	{
 		OBJModel model(objfile);
-		//ObjIndexedModel imodel = model.ToIndexedModel();
-		IndexedModel imodel = model.ToIndexedModel();
+		ObjIndexedModel imodel = model.ToIndexedModel();
+		//IndexedModel imodel = model.ToIndexedModel();
 		Mesh* mesh = Mesh::LoadModel(&imodel);
 		if (mesh)
 		{

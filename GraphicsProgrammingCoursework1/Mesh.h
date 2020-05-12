@@ -4,7 +4,6 @@
 #include "glm.hpp"
 #include "glew.h"
 
-#include "IndexedModel.h"
 #include "ObjLoader.h"
 #include "Vertex.h"
 
@@ -19,7 +18,7 @@ namespace GraphicsProgramming
 		~Mesh();
 
 		//Generate a mesh from a set of vertices, normals, and UV coordinates.
-		static Mesh* LoadModel(IndexedModel* model);
+		static Mesh* LoadModel(ObjIndexedModel* model);
 
 		//Tell openGL to display the model onscreen.
 		void Render();
@@ -30,7 +29,7 @@ namespace GraphicsProgramming
 		Mesh();
 
 		//Initialise the mesh based on the given vertices, normals, and UV coordinates.
-		void InitialiseModel(IndexedModel* model);
+		void InitialiseModel(ObjIndexedModel* model);
 
 		const static short bufferCount = 4;
 		unsigned int drawCount;

@@ -21,14 +21,14 @@ namespace GraphicsProgramming
 		glBindVertexArray(0);
 	}
 
-	Mesh* Mesh::LoadModel(IndexedModel* model)
+	Mesh* Mesh::LoadModel(ObjIndexedModel* model)
 	{
 		Mesh* mesh = new Mesh();
 		mesh->InitialiseModel(model);
 		return mesh;
 	}
 
-	void Mesh::InitialiseModel(IndexedModel* model)
+	void Mesh::InitialiseModel(ObjIndexedModel* model)
 	{
 		drawCount = model->indices.size();
 
@@ -43,7 +43,7 @@ namespace GraphicsProgramming
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
 		glBindBuffer(GL_ARRAY_BUFFER, vertexArrayBuffers[1]); //tell opengl what type of data the buffer is (GL_ARRAY_BUFFER), and pass the data
-		glBufferData(GL_ARRAY_BUFFER, model->positions.size() * sizeof(model->texCoords[0]), &model->texCoords[0], GL_STATIC_DRAW); //move the data to the GPU - type of data, size of data, starting address (pointer) of data, where do we store the data on the GPU
+		glBufferData(GL_ARRAY_BUFFER, model->positions.size() * sizeof(model->uvCoords[0]), &model->uvCoords[0], GL_STATIC_DRAW); //move the data to the GPU - type of data, size of data, starting address (pointer) of data, where do we store the data on the GPU
 		glEnableVertexAttribArray(1);
 		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
