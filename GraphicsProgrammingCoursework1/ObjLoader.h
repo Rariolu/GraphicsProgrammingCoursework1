@@ -9,7 +9,6 @@
 
 namespace GraphicsProgramming
 {
-	//temp
 	class ObjIndexedModel
 	{
 		public:

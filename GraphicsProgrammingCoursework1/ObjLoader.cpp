@@ -7,7 +7,6 @@
 
 namespace GraphicsProgramming
 {
-	//temp
 	bool CompareOBJIndexPtr(const OBJModel::OBJIndex* a, const OBJModel::OBJIndex* b);
 	inline unsigned int ParseOBJIndexValue(const string& token, unsigned int start, unsigned int end);
 	inline float ParseOBJFloatValue(const string& token, unsigned int start, unsigned int end);
