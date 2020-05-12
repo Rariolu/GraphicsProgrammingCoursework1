@@ -52,6 +52,13 @@ vec4 Sway(vec3 normal)
 	return vec4(v,0);
 }
 
+float HomogeniseY(float currentY, float lowestY, float t)
+{
+	float dur = 20;
+	float yT = t > dur ? 1 : t/dur;
+	return Lerp(currentY, lowestY, yT);
+}
+
 void main()
 {
 	vec3 normal = GetNormal();
@@ -64,10 +71,10 @@ void main()
 
 	float lowestY = min(p1.y,min(p2.y,p3.y));
 	float t = gs_in[0].time;
-	float yT = t > 10 ? 1 : t/10f;
-	p1.y = Lerp(p1.y, lowestY, yT);
-	p2.y = Lerp(p2.y, lowestY, yT);
-	p3.y = Lerp(p3.y, lowestY, yT);
+
+	p1.y = HomogeniseY(p1.y, lowestY, t);
+	p2.y = HomogeniseY(p2.y, lowestY, t);
+	p3.y = HomogeniseY(p3.y, lowestY, t);
 
     gl_Position = p1;
 	gs_out.texCoord = gs_in[0].texCoord;
