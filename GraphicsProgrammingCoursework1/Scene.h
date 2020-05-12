@@ -70,7 +70,6 @@ namespace GraphicsProgramming
 			ResourceManager* resourceManager;
 
 		private:
-
 			//Calculate the quantity of seconds that have passed between the previous
 			//frame and the current one.
 			void GenerateDeltaTime();
@@ -90,10 +89,13 @@ namespace GraphicsProgramming
 			//continue (and return false if it shouldn't).
 			virtual bool MouseDown(SDL_MouseButtonEvent mousebutton) = 0;
 
+			//A function that is called immediately after the gameobjects
+			//and skybox have been rendered. This allows additional things
+			//to be rendered.
+			virtual void PostRender() = 0;
+
 			//Iterate through all the gameobjects and render them.
 			virtual void Render();
-
-			virtual void PostRender() = 0;
 
 			//A vague method intended to be used to update the state
 			//of game objects and return true if the scene loop should
@@ -116,8 +118,6 @@ namespace GraphicsProgramming
 
 			//The time stamp of the previous frame.
 			float previousTimeStamp = 0;
-
-
 
 			//The sdl window manager of the current openGL
 			//context (used to clear the display and swap buffers).

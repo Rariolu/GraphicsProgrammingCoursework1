@@ -144,32 +144,32 @@ namespace GraphicsProgramming
 		{
 			switch (event.type)
 			{
-			case SDL_QUIT:
-			{
-				return false;
-			}
-			case SDL_KEYDOWN:
-			{
-				SDL_Keycode keycode = event.key.keysym.sym;
-				if (!KeyDown(keycode))
+				case SDL_QUIT:
 				{
 					return false;
 				}
-				break;
-			}
-			case SDL_MOUSEBUTTONDOWN:
-			{
-				SDL_MouseButtonEvent mousebutton = event.button;
-				if (!MouseDown(mousebutton))
+				case SDL_KEYDOWN:
 				{
-					return false;
+					SDL_Keycode keycode = event.key.keysym.sym;
+					if (!KeyDown(keycode))
+					{
+						return false;
+					}
+					break;
 				}
-				break;
-			}
-			default:
-			{
-				break;
-			}
+				case SDL_MOUSEBUTTONDOWN:
+				{
+					SDL_MouseButtonEvent mousebutton = event.button;
+					if (!MouseDown(mousebutton))
+					{
+						return false;
+					}
+					break;
+				}
+				default:
+				{
+					break;
+				}
 			}
 		}
 		return true;
@@ -200,5 +200,4 @@ namespace GraphicsProgramming
 		//Swap the window buffers
 		sdlWindowManager->SwapBuffer();
 	}
-
 }
